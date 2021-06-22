@@ -40,7 +40,7 @@ class ArchivoXML {
                     var rango              = $('rango',this).text();
                     var personajes=[];
                     $(this).find("personaje").each(function(){
-                        var personajeNombre    = $('personaje',this).attr("nombre");
+                        var personajeNombre    = $('nombrePersonaje',this).attr("nombre");
                         var posicion    = $('posicion',this).text();
                         var descripcion    = $('descripcion',this).text();
                         personajes[j]= new Personajes(personajeNombre,posicion,descripcion);
@@ -50,31 +50,21 @@ class ArchivoXML {
                     casas[i]= new Casa(casa,escudo,historia,caracteristicas,rango,personajes);
                     i++;
                 })
-                /*
-                    //Pasar el archivo XML a un string
-                    var str = (new XMLSerializer()).serializeToString(datos);
+                for (var k=0; k<casas.length;k++){
+                    var stringDatos =  "<h2>" + casas[k].nombre + "</h2> ";
+                        stringDatos += "<img class='escudo' src='"+"multimedia/"+ casas[k].escudo +
+                        "' alt='Escudo' />";
+                        stringDatos += "<p>" + casas[k].historia + "</p>";
+                        stringDatos += "<ul><li>Caracteristicas : " + casas[k].caracteristicas  + "</li>";
+                        stringDatos += "<li>Rango: " + casas[k].rango + "</li><ul>";
+                        for (var l=0; l<casas[k].personajes.length;l++){
+                            stringDatos =  "<h3>" + casas[k].personajes[l].nombre + "</h3> ";
+                            stringDatos =  "<h4>" + casas[k].personajes[l].posicion + "</h4> ";
+                            stringDatos += "<p>" + casas[k].personajes[l].descripcion + "</p>";
+                        }
+                    }
                     
-                    $("h5").text(str);
-                   
-                    var casa                = $('casa',datos).attr("nombre");
-                    var escudo              = $('escudo',datos).text();
-                    var historia              = $('historia',datos).text();
-                    var caracteristicas    = $('caracteriticas',datos).text();
-                    var rango              = $('rango',datos).text();
-                   
-                    
-                    var stringDatos =  "<ul><li>Número de elementos del archivo XML: " + totalNodos + "</li> ";
-                        stringDatos += "<li>Casa: " + casa + "</li>";
-                        stringDatos += "<li>escudo : " + escudo  + " grados</li>";
-                        stringDatos += "<li>historia: " + historia + " grados</li>";
-                        stringDatos += "<li>caracteristicas: " + caracteristicas + "</li>";
-                        stringDatos += "<li>rango: " + rango + "</li>";
-                        stringDatos += "<li>personajeNombre: " + personajeNombre + "</li>";
-                        stringDatos += "<li>posicion: " + posicion + " grados Celsius</li>";
-                        stringDatos += "<li>Descripción: " + descripcion + "</li><ul>";
-                    
-                    $("p").html(stringDatos);  
-                    */                
+                    $("div").html(stringDatos);
                 },
             error:function(){
                 $("h3").html("¡Tenemos problemas! No se pudo cargar el archivo XML"); 
