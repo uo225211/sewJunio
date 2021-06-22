@@ -23,7 +23,7 @@ class ArchivoXML {
         this.correcto = "¡Todo correcto! archivo XML cargado"
         
     }
-    cargarDatos(){
+    verXML(){
         var casas=[];
         $.ajax({
             dataType: "xml",
@@ -50,23 +50,49 @@ class ArchivoXML {
                     casas[i]= new Casa(casa,escudo,historia,caracteristicas,rango,personajes);
                     i++;
                 })
+                var node=document.createElement("DIV");
                 for (var k=0; k<casas.length;k++){
-                    var stringDatos =  "<h2>" + casas[k].nombre + "</h2> ";
-                        stringDatos += "<img class='escudo' src='"+"multimedia/"+ casas[k].escudo +
-                        "' alt='Escudo' />";
-                        stringDatos += "<p>" + casas[k].historia + "</p>";
-                        stringDatos += "<ul><li>Caracteristicas : " + casas[k].caracteristicas  + "</li>";
-                        stringDatos += "<li>Rango: " + casas[k].rango + "</li><ul>";
-                        var aux=casas[k].personajes;
-                        for (var l=0; l<aux.length;l++){
-                            var per=aux[l];
-                            stringDatos +=  "<h3>" + per.nombre + "</h3> ";
-                            stringDatos +=  "<h4>" + per.posicion + "</h4> ";
-                            stringDatos += "<p>" + per.descripcion + "</p>";
-                        }
+                    var node2 = document.createElement("h2");                 // Create a <h2> node
+                    var textnode = document.createTextNode(casas[k].nombre); 
+                    node2.appendChild(textnode); 
+                    node.appendChild(node2); 
+                    var node3 = document.createElement("IMG");  // Create a <img> node
+                    node3.setAttribute("src", "multimedia/"+ casas[k].escudo);
+                    node.appendChild(node3); 
+                    var node4 = document.createElement("p");                 // Create a <p> node
+                    var textnode = document.createTextNode(casas[k].historia); 
+                    node4.appendChild(textnode); 
+                    node.appendChild(node4); 
+                    var node5 = document.createElement("UL");                 // Create a <ul> node
+                    var node6 = document.createElement("Li");
+                    var textnode = document.createTextNode("Caracteristicas : " + casas[k].caracteristicas ); 
+                    node6.appendChild(textnode); 
+                    node5.appendChild(node6);
+                    var node6 = document.createElement("Li");
+                    var textnode = document.createTextNode("Rango: " + casas[k].rango ); 
+                    node6.appendChild(textnode); 
+                    node5.appendChild(node6);
+                    node.appendChild(node5); 
+                    var aux=casas[k].personajes;
+                    for (var l=0; l<aux.length;l++){
+                        var per=aux[l];
+                        var node2 = document.createElement("h3");                 // Create a <h2> node
+                        var textnode = document.createTextNode(per.nombre ); 
+                        node2.appendChild(textnode); 
+                        node.appendChild(node2); 
+                        var node2 = document.createElement("h4");                 // Create a <h2> node
+                        var textnode = document.createTextNode(per.posicion); 
+                        node2.appendChild(textnode); 
+                        node.appendChild(node2); 
+                        var node2 = document.createElement("p");                 // Create a <h2> node
+                        var textnode = document.createTextNode(per.descripcion); 
+                        node2.appendChild(textnode); 
+                        node.appendChild(node2);                            
                     }
                     
-                    document.getElementById("todo").innerHTML= stringDatos;
+                    var item = document.getElementById("casas").childNodes[5];
+                    item.replaceChild(node, item.childNodes[0]);
+                }
                 },
             error:function(){
                 $("h3").html("¡Tenemos problemas! No se pudo cargar el archivo XML"); 
@@ -76,24 +102,327 @@ class ArchivoXML {
                 }
         });
     }
-    crearElemento(tipoElemento, texto, insertarAntesDe){
-        // Crea un nuevo elemento modificando el árbol DOM
-        // El elemnto creado es de 'tipoElemento' con un 'texto' 
-        // El elemnto se coloca antes del elemnto 'insertarAntesDe'
-        var elemento = document.createElement(tipoElemento); 
-        elemento.innerHTML = texto;
-        $(insertarAntesDe).before(elemento);
+    verzevallos(){
+        var casas=[];
+        $.ajax({
+            dataType: "xml",
+            url: this.nombre,
+            method: 'GET',
+            success: function(datos){
+                var i=0;                
+                $(datos).find("casa").each(function(){
+                    var casa                 = $(this).attr("nombre");
+                    var escudo              = $('escudo',this).text();
+                    var historia              = $('historia',this).text();
+                    var caracteristicas    = $('caracteriticas',this).text();
+                    var rango              = $('rango',this).text();
+                    var personajes=[];
+                    var j=0;
+                    $(this).find("personaje").each(function(){
+                        var personajeNombre    = $(this).attr("nombrePersonaje");
+                        var posicion    = $('posicion',this).text();
+                        var descripcion    = $('descripcion',this).text();
+                        personajes[j]= new Personajes(personajeNombre,posicion,descripcion);
+                        j++;
+                    });
+
+                    casas[i]= new Casa(casa,escudo,historia,caracteristicas,rango,personajes);
+                    i++;
+                })
+                var node=document.createElement("DIV");
+                for (var k=0; k<casas.length;k++){
+                    if (casas[k].escudo=="multimedia/zevallos.png"){
+                        var node2 = document.createElement("h2");                 // Create a <h2> node
+                        var textnode = document.createTextNode(casas[k].nombre); 
+                        node2.appendChild(textnode); 
+                        node.appendChild(node2); 
+                        var node3 = document.createElement("IMG");  // Create a <img> node
+                        node3.setAttribute("src", casas[k].escudo);
+                        node.appendChild(node3); 
+                        var node4 = document.createElement("p");                 // Create a <p> node
+                        var textnode = document.createTextNode(casas[k].historia); 
+                        node4.appendChild(textnode); 
+                        node.appendChild(node4); 
+                        var node5 = document.createElement("UL");                 // Create a <ul> node
+                        var node6 = document.createElement("Li");
+                        var textnode = document.createTextNode("Caracteristicas : " + casas[k].caracteristicas ); 
+                        node6.appendChild(textnode); 
+                        node5.appendChild(node6);
+                        var node6 = document.createElement("Li");
+                        var textnode = document.createTextNode("Rango: " + casas[k].rango ); 
+                        node6.appendChild(textnode); 
+                        node5.appendChild(node6);
+                        node.appendChild(node5); 
+                        var aux=casas[k].personajes;
+                        for (var l=0; l<aux.length;l++){
+                            var per=aux[l];
+                            var node2 = document.createElement("h3");                 // Create a <h2> node
+                            var textnode = document.createTextNode(per.nombre ); 
+                            node2.appendChild(textnode); 
+                            node.appendChild(node2); 
+                            var node2 = document.createElement("h4");                 // Create a <h2> node
+                            var textnode = document.createTextNode(per.posicion); 
+                            node2.appendChild(textnode); 
+                            node.appendChild(node2); 
+                            var node2 = document.createElement("p");                 // Create a <h2> node
+                            var textnode = document.createTextNode(per.descripcion); 
+                            node2.appendChild(textnode); 
+                            node.appendChild(node2);                            
+                        }
+                    }                    
+                    var item = document.getElementById("casas").childNodes[5];
+                    item.replaceChild(node, item.childNodes[0]);
+                }
+                },
+            error:function(){
+                $("h3").html("¡Tenemos problemas! No se pudo cargar el archivo XML"); 
+                $("h4").remove();
+                $("h5").remove();
+                $("p").remove();
+                }
+        });
     }
-    verXML(){
-        //Muestra el archivo JSON recibido
-        /*this.crearElemento("h2","Archivo XML","footer"); 
-        this.crearElemento("h3",this.correcto,"footer"); // Crea un elemento con DOM 
-        this.crearElemento("h4","XML","footer"); // Crea un elemento con DOM        
-        this.crearElemento("h5","","footer"); // Crea un elemento con DOM para el string con XML
-        this.crearElemento("h4","Datos","footer"); // Crea un elemento con DOM 
-        this.crearElemento("p","","footer"); // Crea un elemento con DOM para los datos obtenidos con XML*/
-        this.cargarDatos();
-        $("button").attr("disabled","disabled");
+        vermeneses(){
+            var casas=[];
+            $.ajax({
+                dataType: "xml",
+                url: this.nombre,
+                method: 'GET',
+                success: function(datos){
+                    var i=0;                
+                    $(datos).find("casa").each(function(){
+                        var casa                 = $(this).attr("nombre");
+                        var escudo              = $('escudo',this).text();
+                        var historia              = $('historia',this).text();
+                        var caracteristicas    = $('caracteriticas',this).text();
+                        var rango              = $('rango',this).text();
+                        var personajes=[];
+                        var j=0;
+                        $(this).find("personaje").each(function(){
+                            var personajeNombre    = $(this).attr("nombrePersonaje");
+                            var posicion    = $('posicion',this).text();
+                            var descripcion    = $('descripcion',this).text();
+                            personajes[j]= new Personajes(personajeNombre,posicion,descripcion);
+                            j++;
+                        });
+    
+                        casas[i]= new Casa(casa,escudo,historia,caracteristicas,rango,personajes);
+                        i++;
+                    })
+                    var node=document.createElement("DIV");
+                    for (var k=0; k<casas.length;k++){
+                        if (casas[k].escudo=="multimedia/meneses.jpg"){
+                            var node2 = document.createElement("h2");                 // Create a <h2> node
+                            var textnode = document.createTextNode(casas[k].nombre); 
+                            node2.appendChild(textnode); 
+                            node.appendChild(node2); 
+                            var node3 = document.createElement("IMG");  // Create a <img> node
+                            node3.setAttribute("src", casas[k].escudo);
+                            node.appendChild(node3); 
+                            var node4 = document.createElement("p");                 // Create a <p> node
+                            var textnode = document.createTextNode(casas[k].historia); 
+                            node4.appendChild(textnode); 
+                            node.appendChild(node4); 
+                            var node5 = document.createElement("UL");                 // Create a <ul> node
+                            var node6 = document.createElement("Li");
+                            var textnode = document.createTextNode("Caracteristicas : " + casas[k].caracteristicas ); 
+                            node6.appendChild(textnode); 
+                            node5.appendChild(node6);
+                            var node6 = document.createElement("Li");
+                            var textnode = document.createTextNode("Rango: " + casas[k].rango ); 
+                            node6.appendChild(textnode); 
+                            node5.appendChild(node6);
+                            node.appendChild(node5); 
+                            var aux=casas[k].personajes;
+                            for (var l=0; l<aux.length;l++){
+                                var per=aux[l];
+                                var node2 = document.createElement("h3");                 // Create a <h2> node
+                                var textnode = document.createTextNode(per.nombre ); 
+                                node2.appendChild(textnode); 
+                                node.appendChild(node2); 
+                                var node2 = document.createElement("h4");                 // Create a <h2> node
+                                var textnode = document.createTextNode(per.posicion); 
+                                node2.appendChild(textnode); 
+                                node.appendChild(node2); 
+                                var node2 = document.createElement("p");                 // Create a <h2> node
+                                var textnode = document.createTextNode(per.descripcion); 
+                                node2.appendChild(textnode); 
+                                node.appendChild(node2);                            
+                            }
+                        }                    
+                        var item = document.getElementById("casas").childNodes[5];
+                        item.replaceChild(node, item.childNodes[0]);
+                    }
+                    },
+                error:function(){
+                    $("h3").html("¡Tenemos problemas! No se pudo cargar el archivo XML"); 
+                    $("h4").remove();
+                    $("h5").remove();
+                    $("p").remove();
+                    }
+            });
     }
+    verosuna(){
+        var casas=[];
+        $.ajax({
+            dataType: "xml",
+            url: this.nombre,
+            method: 'GET',
+            success: function(datos){
+                var i=0;                
+                $(datos).find("casa").each(function(){
+                    var casa                 = $(this).attr("nombre");
+                    var escudo              = $('escudo',this).text();
+                    var historia              = $('historia',this).text();
+                    var caracteristicas    = $('caracteriticas',this).text();
+                    var rango              = $('rango',this).text();
+                    var personajes=[];
+                    var j=0;
+                    $(this).find("personaje").each(function(){
+                        var personajeNombre    = $(this).attr("nombrePersonaje");
+                        var posicion    = $('posicion',this).text();
+                        var descripcion    = $('descripcion',this).text();
+                        personajes[j]= new Personajes(personajeNombre,posicion,descripcion);
+                        j++;
+                    });
+
+                    casas[i]= new Casa(casa,escudo,historia,caracteristicas,rango,personajes);
+                    i++;
+                })
+                var node=document.createElement("DIV");
+                for (var k=0; k<casas.length;k++){
+                    if (casas[k].escudo=="multimedia/osuna.png"){
+                        var node2 = document.createElement("h2");                 // Create a <h2> node
+                        var textnode = document.createTextNode(casas[k].nombre); 
+                        node2.appendChild(textnode); 
+                        node.appendChild(node2); 
+                        var node3 = document.createElement("IMG");  // Create a <img> node
+                        node3.setAttribute("src", casas[k].escudo);
+                        node.appendChild(node3); 
+                        var node4 = document.createElement("p");                 // Create a <p> node
+                        var textnode = document.createTextNode(casas[k].historia); 
+                        node4.appendChild(textnode); 
+                        node.appendChild(node4); 
+                        var node5 = document.createElement("UL");                 // Create a <ul> node
+                        var node6 = document.createElement("Li");
+                        var textnode = document.createTextNode("Caracteristicas : " + casas[k].caracteristicas ); 
+                        node6.appendChild(textnode); 
+                        node5.appendChild(node6);
+                        var node6 = document.createElement("Li");
+                        var textnode = document.createTextNode("Rango: " + casas[k].rango ); 
+                        node6.appendChild(textnode); 
+                        node5.appendChild(node6);
+                        node.appendChild(node5); 
+                        var aux=casas[k].personajes;
+                        for (var l=0; l<aux.length;l++){
+                            var per=aux[l];
+                            var node2 = document.createElement("h3");                 // Create a <h2> node
+                            var textnode = document.createTextNode(per.nombre ); 
+                            node2.appendChild(textnode); 
+                            node.appendChild(node2); 
+                            var node2 = document.createElement("h4");                 // Create a <h2> node
+                            var textnode = document.createTextNode(per.posicion); 
+                            node2.appendChild(textnode); 
+                            node.appendChild(node2); 
+                            var node2 = document.createElement("p");                 // Create a <h2> node
+                            var textnode = document.createTextNode(per.descripcion); 
+                            node2.appendChild(textnode); 
+                            node.appendChild(node2);                            
+                        }
+                    }                    
+                    var item = document.getElementById("casas").childNodes[5];
+                    item.replaceChild(node, item.childNodes[0]);
+                }
+                },
+            error:function(){
+                $("h3").html("¡Tenemos problemas! No se pudo cargar el archivo XML"); 
+                $("h4").remove();
+                $("h5").remove();
+                $("p").remove();
+                }
+        });
+    }
+    verbutron(){
+        var casas=[];
+        $.ajax({
+            dataType: "xml",
+            url: this.nombre,
+            method: 'GET',
+            success: function(datos){
+                var i=0;                
+                $(datos).find("casa").each(function(){
+                    var casa                 = $(this).attr("nombre");
+                    var escudo              = $('escudo',this).text();
+                    var historia              = $('historia',this).text();
+                    var caracteristicas    = $('caracteriticas',this).text();
+                    var rango              = $('rango',this).text();
+                    var personajes=[];
+                    var j=0;
+                    $(this).find("personaje").each(function(){
+                        var personajeNombre    = $(this).attr("nombrePersonaje");
+                        var posicion    = $('posicion',this).text();
+                        var descripcion    = $('descripcion',this).text();
+                        personajes[j]= new Personajes(personajeNombre,posicion,descripcion);
+                        j++;
+                    });
+
+                    casas[i]= new Casa(casa,escudo,historia,caracteristicas,rango,personajes);
+                    i++;
+                })
+                var node=document.createElement("DIV");
+                for (var k=0; k<casas.length;k++){
+                    if (casas[k].escudo=="multimedia/bruton.jpg"){
+                        var node2 = document.createElement("h2");                 // Create a <h2> node
+                        var textnode = document.createTextNode(casas[k].nombre); 
+                        node2.appendChild(textnode); 
+                        node.appendChild(node2); 
+                        var node3 = document.createElement("IMG");  // Create a <img> node
+                        node3.setAttribute("src", casas[k].escudo);
+                        node.appendChild(node3); 
+                        var node4 = document.createElement("p");                 // Create a <p> node
+                        var textnode = document.createTextNode(casas[k].historia); 
+                        node4.appendChild(textnode); 
+                        node.appendChild(node4); 
+                        var node5 = document.createElement("UL");                 // Create a <ul> node
+                        var node6 = document.createElement("Li");
+                        var textnode = document.createTextNode("Caracteristicas : " + casas[k].caracteristicas ); 
+                        node6.appendChild(textnode); 
+                        node5.appendChild(node6);
+                        var node6 = document.createElement("Li");
+                        var textnode = document.createTextNode("Rango: " + casas[k].rango ); 
+                        node6.appendChild(textnode); 
+                        node5.appendChild(node6);
+                        node.appendChild(node5); 
+                        var aux=casas[k].personajes;
+                        for (var l=0; l<aux.length;l++){
+                            var per=aux[l];
+                            var node2 = document.createElement("h3");                 // Create a <h2> node
+                            var textnode = document.createTextNode(per.nombre ); 
+                            node2.appendChild(textnode); 
+                            node.appendChild(node2); 
+                            var node2 = document.createElement("h4");                 // Create a <h2> node
+                            var textnode = document.createTextNode(per.posicion); 
+                            node2.appendChild(textnode); 
+                            node.appendChild(node2); 
+                            var node2 = document.createElement("p");                 // Create a <h2> node
+                            var textnode = document.createTextNode(per.descripcion); 
+                            node2.appendChild(textnode); 
+                            node.appendChild(node2);                            
+                        }
+                    }                    
+                    var item = document.getElementById("casas").childNodes[5];
+                    item.replaceChild(node, item.childNodes[0]);
+                }
+                },
+            error:function(){
+                $("h3").html("¡Tenemos problemas! No se pudo cargar el archivo XML"); 
+                $("h4").remove();
+                $("h5").remove();
+                $("p").remove();
+                }
+        });
+    }
+
+
 }
 var oviedo = new ArchivoXML("casas.xml");
