@@ -30,17 +30,17 @@ class ArchivoXML {
             url: this.nombre,
             method: 'GET',
             success: function(datos){
-                var i=0;
-                var j=0;
+                var i=0;                
                 $(datos).find("casa").each(function(){
-                    var casa                = $('nombre',this).text();
+                    var casa                 = $(this).attr("nombre");
                     var escudo              = $('escudo',this).text();
                     var historia              = $('historia',this).text();
                     var caracteristicas    = $('caracteriticas',this).text();
                     var rango              = $('rango',this).text();
                     var personajes=[];
+                    var j=0;
                     $(this).find("personaje").each(function(){
-                        var personajeNombre    = $('nombrePersonaje',this).text();
+                        var personajeNombre    = $(this).attr("nombrePersonaje");
                         var posicion    = $('posicion',this).text();
                         var descripcion    = $('descripcion',this).text();
                         personajes[j]= new Personajes(personajeNombre,posicion,descripcion);
