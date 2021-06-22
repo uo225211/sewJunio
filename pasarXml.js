@@ -57,10 +57,11 @@ class ArchivoXML {
                         stringDatos += "<p>" + casas[k].historia + "</p>";
                         stringDatos += "<ul><li>Caracteristicas : " + casas[k].caracteristicas  + "</li>";
                         stringDatos += "<li>Rango: " + casas[k].rango + "</li><ul>";
-                        for (var l=0; l<casas[k].personajes.length;l++){
-                            stringDatos =  "<h3>" + casas[k].personajes[l].nombre + "</h3> ";
-                            stringDatos =  "<h4>" + casas[k].personajes[l].posicion + "</h4> ";
-                            stringDatos += "<p>" + casas[k].personajes[l].descripcion + "</p>";
+                        var aux=casas[k].personajes;
+                        for (var l=0; l<aux.length;l++){
+                            stringDatos =  "<h3>" + aux[l].nombre + "</h3> ";
+                            stringDatos =  "<h4>" + aux[l].posicion + "</h4> ";
+                            stringDatos += "<p>" + aux[l].descripcion + "</p>";
                         }
                     }
                     
