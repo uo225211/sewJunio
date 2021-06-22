@@ -40,7 +40,7 @@ class ArchivoXML {
                     var rango              = $('rango',this).text();
                     var personajes=[];
                     $(this).find("personaje").each(function(){
-                        var personajeNombre    = $('nombrePersonaje',this).attr("nombre");
+                        var personajeNombre    = $('nombrePersonaje',this).text();
                         var posicion    = $('posicion',this).text();
                         var descripcion    = $('descripcion',this).text();
                         personajes[j]= new Personajes(personajeNombre,posicion,descripcion);
@@ -60,8 +60,8 @@ class ArchivoXML {
                         var aux=casas[k].personajes;
                         for (var l=0; l<aux.length;l++){
                             var per=aux[l];
-                            stringDatos =  "<h3>" + per.nombre + "</h3> ";
-                            stringDatos =  "<h4>" + per.posicion + "</h4> ";
+                            stringDatos +=  "<h3>" + per.nombre + "</h3> ";
+                            stringDatos +=  "<h4>" + per.posicion + "</h4> ";
                             stringDatos += "<p>" + per.descripcion + "</p>";
                         }
                     }
