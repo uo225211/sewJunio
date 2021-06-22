@@ -105,7 +105,7 @@ article h2 {
   text-align: center; 
 }
 /*(1,0,0)*/
- #casas{
+ #botonesCasas{
   display: flex;
   justify-content: center;
 }
