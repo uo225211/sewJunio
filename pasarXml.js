@@ -91,7 +91,7 @@ class ArchivoXML {
                             node.appendChild(node2);                            
                         }
                     }                    
-                    var item = document.getElementById("casas").childNodes[4];
+                    var item = document.getElementById("casas");
                     item.replaceChild(node, item.childNodes[0]);
                 }
                 },
