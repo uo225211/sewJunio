@@ -59,6 +59,7 @@ class ArchivoXML {
                         node.appendChild(node2); 
                         var node3 = document.createElement("IMG");  // Create a <img> node
                         node3.setAttribute("src", casas[k].escudo);
+                        node3.setAttribute("class", "escudo");
                         node.appendChild(node3); 
                         var node4 = document.createElement("p");                 // Create a <p> node
                         var textnode = document.createTextNode(casas[k].historia); 
