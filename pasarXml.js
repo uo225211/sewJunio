@@ -21,9 +21,10 @@ class ArchivoXML {
     constructor(nombre){
         this.nombre = nombre;
         this.correcto = "¡Todo correcto! archivo XML cargado"
-        this.casas=[];
+        
     }
     cargarDatos(){
+        var casas=[];
         $.ajax({
             dataType: "xml",
             url: this.nombre,
