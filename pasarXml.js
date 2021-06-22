@@ -66,7 +66,7 @@ class ArchivoXML {
                         }
                     }
                     
-                    $("div").html(stringDatos);
+                    document.getElementById("todo").innerHTML= stringDatos;
                 },
             error:function(){
                 $("h3").html("¡Tenemos problemas! No se pudo cargar el archivo XML"); 
