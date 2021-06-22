@@ -46,7 +46,7 @@ class ArchivoXML {
                         j++;
                     });
 
-                    casas[i]= new Casa(casa,escudo,historia,caracteristicas,rango,personajes);
+                    this.casas[i]= new Casa(casa,escudo,historia,caracteristicas,rango,personajes);
                     i++;
                 })
                 /*
