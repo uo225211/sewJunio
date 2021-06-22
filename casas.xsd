@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.uniovi.es" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="casas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="casa">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="escudo" type="xs:string" />
+              <xs:element name="historia" type="xs:string" />
+              <xs:element name="caracteriticas" type="xs:string" />
+              <xs:element name="rango" type="xs:string" />
+              <xs:element name="personajes">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" name="personaje">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="posicion" type="xs:string" />
+                          <xs:element name="descripcion" type="xs:string" />
+                          <xs:element minOccurs="0"  name="fotografia" type="xs:string" />
+                        </xs:sequence>
+                        <xs:attribute name="nombrePersonaje" type="xs:string" use="required" />
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="nombre" type="xs:string" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

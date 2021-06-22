@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<casas xmlns="http://www.uniovi.es"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.uniovi.es casas.xsd">
+    <casa nombre="Casa de Zevallos">
+        <escudo>multimedia/zevallos.png</escudo>
+        <historia>
+            Es una de las más antiguas de la región y en su día fue la más fuerte y la que controlaba todo en el territorio. Hasta la apareció de la casa de los Bruton que poco a poco fue quitándole poder y territorios hasta el punto de quedar relegada a las fronteras del bierzo y convirtiéndose así en la protectora de la frontera. 
+            Actual mente es una casa menor, pero tiene un gran poder y voto en la región sobre todo por su gran trabajo protegiendo el territorio. Ya que, aunque sean pocos entre sus filas son los mejores arqueros que existen en todo el reino.
+            Pero todo cambio hace un par de semanas cuando por medio de un mensajero le llego unos documentos que podría volver la casa a su gloria de antaño. 
+            Lo más extraño es que el mensajero venia de parte del líder de los Bruton que poco después falleció. No que otra que llegar al fondo del asunto y recupera nuestro lugar.            
+        </historia>
+        <caracteriticas>
+                Grandes arqueros
+        </caracteriticas>
+        <rango>menor</rango>
+        <personajes>
+            <personaje nombrePersonaje="">
+                <posicion>
+                
+                </posicion>
+                <descripcion></descripcion>
+            </personaje>
+        </personajes>
+    </casa>
+    <casa nombre="Casa Brutón">
+        <escudo>multimedia/bruton.jpg</escudo>
+        <historia>
+            Es la casa más antigua de todas que hay en la región, fue fundada en el siglo IV cuando Emilien Bruton al ayudar a proteger la abadía que dirigía Liberrio después conocido como obispo Liberrio de Merida.
+            Y devolviendo el favor que avía hecho por el que le entrego los títulos nobiliarios y suficiente dinero para poder formar su propio mini ejecito y ponerlo al servicio de la Iglesia siempre que esta lo necesitara.
+            Después de varios años los Brutón siguen la región del bierzo y tenido bajo su control casi todos los hombres de armas de la región y sobresaliendo en el control de la lucha con espada y escudo.
+            Actual mente la casa pasa por un pequeño conflicto ya que hace una semana de la muerte del señor de la casa y sin descendencia de hijo varón. El control de la casa pasa a su única hija. 
+            Esta situación no les gusta a muchos a algunos miembros de la casa y algún que otro aliado.            
+        </historia>
+        <caracteriticas>
+                Grandes guerreros (escudo y espada)
+        </caracteriticas>
+        <rango>medio</rango>
+        <personajes>
+            <personaje nombrePersonaje="Alicia Brutón">
+                <posicion>Matriarca</posicion>
+                <descripcion>Alicia es una mujer muy carismatica y esperta guerrera, siempre va acompañada de su
+                    consejero y primo materno.
+                </descripcion>
+            </personaje>
+            <personaje nombrePersonaje="Juán Miguel Rodriguez">
+                <posicion>Consejero</posicion>
+                <descripcion>Primo materno de Alicia Brutón, es muy reservado y casi no se nota su presencia, pero siempre esta
+                    atento a todo lo que pasa en la casa.
+                </descripcion>
+            </personaje>
+        </personajes>
+    </casa>
+    <casa nombre="Casa Osuna">
+        <escudo>multimedia/osuna.png</escudo>
+        <historia>
+            No se sabe mucho de esta casa ya que apareció relativamente poco, pero se ha ido extendiendo por diferentes regiones muy rápidamente y una vez controladas, pasan a la siguiente zona.
+            Pero lo que sí se sabe es que todos los miembros son de alta alcurnia y que poseen muchas riquezas y contactos en las cortes.
+            Lo más raro son los rumores sobre esta casa ya que en el pasado todos lo que se oponen a sus objetivos han desaparecido o tenido extraños accidentes e incluso muchos han muerto. Pero nuca se aprobado nada de estos y de hecho nuca se ha jugado a ningún miembro de esta casa es como si algo divino lo protegiera 
+        </historia>
+        <caracteriticas>
+                Nobles
+        </caracteriticas>
+        <rango>Medio-Alto</rango>
+        <personajes>
+            <personaje nombrePersonaje="">
+                <posicion>
+                
+                </posicion>
+                <descripcion></descripcion>
+                <fotografia> 
+                    </fotografia>
+            </personaje>
+        </personajes>
+    </casa>
+    <casa nombre="Casa de Meneses">
+        <escudo>multimedia/meneses.jpg</escudo>
+        <historia>
+            Fue fundada en el siglo V. nuca llego a ser una casa mayor, pero ni falta que le hace ya que tiene tanto poder como una casa mayor esto es divido a le ellos son lo que controla todo el comercio que hay en la región.
+            Posen números negocios y caravanas para mover toda la mercancía que poseen son capaces de conseguirte lo que quieras desdés una tela pasando por una gran joya o una persona, como dice su lema “no hay nada imposible solo que no pagas lo suficiente”.
+            Por un motivo u otros todas las casas de la región tienen algún tipo de acuerdo con ellos por eso ninguna de ellas osan atacar o hacer algo contra ella.
+            Y este nuevo panorama que se avecina es una gran oportunidad de negocio que no pueden dejar pasar bajo ningún conceto.
+        </historia>
+        <caracteriticas>
+                Comerciantes
+        </caracteriticas>
+        <rango>Media</rango>
+        <personajes>
+            <personaje nombrePersonaje="">
+                <posicion>
+                
+                </posicion>
+                <descripcion></descripcion>
+                <fotografia> 
+                    </fotografia>
+            </personaje>
+        </personajes>
+    </casa>
+</casas>

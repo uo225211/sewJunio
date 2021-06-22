@@ -1,0 +1,15 @@
+<!ELEMENT casas (casa+)>
+<!ELEMENT casa (historia, caracteriticas, rango, escudo, personajes)>
+<!ELEMENT historia (#PCDATA)>
+<!ELEMENT caracteriticas (#PCDATA)>
+<!ELEMENT rango (#PCDATA)>
+<!ELEMENT escudo (#PCDATA)>
+<!ELEMENT personajes (personaje+)>
+<!ELEMENT personaje (posicion,descripcion,fotografia?)>
+<!ELEMENT posicion (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT fotografia (#PCDATA)>
+<!ATTLIST casa 
+	nombre CDATA #REQUIRED>
+<!ATTLIST personaje 
+    nombrePersonaje CDATA #REQUIRED>

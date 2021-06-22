@@ -1,0 +1,47 @@
+
+
+  table {
+    font-size: 18px;
+    border-spacing: 15px;
+    text-align: center;
+    vertical-align: center;
+    margin: auto;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th,td {
+    border: 1px solid #ddd;
+    font-size: 18px;
+    padding: 5px;
+    text-align: center;
+  }
+  th{
+  background-color: #9864c9cb;
+  color: white;
+  }
+
+  #BandaSonora {
+    
+    border-collapse: collapse;
+    font-size: 18px;
+    border-spacing: 15px;
+    text-align: center;
+    margin: auto;
+    vertical-align: center;
+    width: 100%;
+  }
+  #BandaSonora th, #BandaSonora td {
+    padding: 5px;
+    text-align: center;
+  }
+  #BandaSonora th{
+  background-color: #9864c9cb;
+  color: white;
+  }
+  
+
+p{
+  font-size: 18px;
+  line-height: 2.5;
+}
+
