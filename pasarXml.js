@@ -59,9 +59,10 @@ class ArchivoXML {
                         stringDatos += "<li>Rango: " + casas[k].rango + "</li><ul>";
                         var aux=casas[k].personajes;
                         for (var l=0; l<aux.length;l++){
-                            stringDatos =  "<h3>" + aux[l].nombre + "</h3> ";
-                            stringDatos =  "<h4>" + aux[l].posicion + "</h4> ";
-                            stringDatos += "<p>" + aux[l].descripcion + "</p>";
+                            var per=aux[l];
+                            stringDatos =  "<h3>" + per.nombre + "</h3> ";
+                            stringDatos =  "<h4>" + per.posicion + "</h4> ";
+                            stringDatos += "<p>" + per.descripcion + "</p>";
                         }
                     }
                     
