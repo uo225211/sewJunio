@@ -33,7 +33,7 @@ class ArchivoXML {
                 var i=0;
                 var j=0;
                 $(datos).find("casa").each(function(){
-                    var casa                = $('casa',this).attr("nombre").text();
+                    var casa                = $('nombre',this).text();
                     var escudo              = $('escudo',this).text();
                     var historia              = $('historia',this).text();
                     var caracteristicas    = $('caracteriticas',this).text();
