@@ -2,105 +2,120 @@
 
 <html lang="es">
 
-<head>
+  <head>
     
-  <meta charset="UTF-8">
-  <title>El destino del Bierzo</title>
-  <META NAME=description CONTENT="Pagina del rol en vivo: Destino del Bierzo"/>
-  <META NAME=author CONTENT="Beatriz Arbizu Ramírez"/>
-  <meta name=keywords content="rol,bierzo,destino, reglas, asociación"/>    
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="estilo.css" />
-  <script src="pasarXml.js"></script>
-</head>
-<body>
-  <header class="Titulo">
-    <p>El destino del Bierzo</p>
-</header> 
-<main class="row">
-    <aside class="leftcolumn">
-        <nav>
-            
-            <ul>
-                <li><a href="index.html">Portada</a></li>
-                <li><a  class="active" href="historia.html">Historia del rol en vivo</a></li>
-                <li><a href="reglas.html">Reglas del evento </a></li>
-                <li><a href="recomendacionesyloca.html">Recomendaciones y localización</a></li>
-                <li><a href="asociaciones.html">Agradecimientos</a></li>
-                <li><a href="suscrición.html">Suscrición</a></li>
-                <li><a href="horario.html">Horario</a></li>
-                <li><a href="administración.html">Administración</a></li>
-            </ul>
-        </nav>
-        <audio src="multimedia/fondo.mp3" preload="auto" autoplay="true" controls loop></audio>
-    </aside>
-
-    <article class="rightcolumn">
-      <h1>Historia</h1>
+    <meta charset="UTF-8">
+    <title>El destino del Bierzo</title>
+    <meta name="description" content="Pagina del rol en vivo: Destino del Bierzo">
+    <meta name="author" content="Beatriz Arbizu Ramírez">
+    <meta name="keywords" content="rol,bierzo,destino, reglas, asociación">    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script scr="navegador.js"></script>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script src="pasarXml.js"></script>
+    
+  </head>
+  <body> 
+    <script scr="navegador.js"></script>
+  <!-- Sidebar/menu -->
+  <nav class="sidebar colorFondo collapse top large padding" id="mySidebar">  
+    <a href="javascript:void(0)" class="button hide-large display-topleft" id="cerrar" onclick="nave.close()">Cerrar Menu</a>  
+    <div class="container">
+        <h3 class="padding-64"><b>El destino </b><b>del Bierzo</b></h3>
+    </div>
+    <div class="bar-block">
+      <a class="bar-item button hover-color" href="index.html">Inicio</a>
+      <a class="bar-item button hover-color" href="historia.html">Historia del rol en vivo</a>
+      <a class="bar-item button hover-color" href="reglas.html">Reglas del evento </a>
+      <a class="bar-item button hover-color" href="recomendacionesyloca.html">Recomendaciones y localización</a>
+      <a class="bar-item button hover-color" href="asociaciones.html">Agradecimientos</a>
+      <a class="bar-item button hover-color" href="suscrición.html">Suscrición</a>
+      <a class="bar-item button hover-color" href="horario.html">Horario</a>
+      <a class="bar-item button hover-color" href="administración.html">Administración</a>
+      <audio src="multimedia/fondo.mp3" preload="auto" autoplay="true" controls="" loop=""></audio>
+    </div>       
+  </nav>
+          
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large colorFondo xlarge padding">
+    <a href="javascript:void(0)" class="button colorFondo margin-right" onclick="nave.open()">☰</a>
+    <span>El destino del Bierzo</span>
+  </header>
+  
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="nave.close()" title="close side menu" id="myOverlay"></div>
+  
+  <main id="contenido" class="main">
+    <article >
+      <section class=" container" id="pagina_titulo">
+        <h1 class=" xxxlarge  text-blue"><b>Historia</b></h1>
+        <hr class="round round-blue">
+      </section> 
       <section>
-      <p>Corre el siglo XIII y la gran reconquista ha empezado hacia el sur para librar todo el reino 
-        de España, por eso al bierzo ha llegado una petición de reclutamiento al gran ejecito que se 
-        formara bajo el mando de Pelayo.</p>
-      <p>
-        Por eso todas las casas de la región corren a preparar y buscar nuevos miembros para unirse a las 
-        filas del ejecito de Pelayo.
-      </p>
-      <p>
-        Aunque la causa sea noble las casas siguen teniendo sus viejas rencillas y aran lo posible por quedar 
-        por encima de las otras, cobrase viejas rencillas u otros asuntos propios. 
-      </p>
-      <p>
-        En la región predominan cuatro casas principales sombre las demás cada una de ellas teniendo su 
-        especialidad:
-      </p>
-      <ul>
-        <li>Casa Butrón</li>
-        <li>Casa Osuna </li>
-        <li>Casa de Meneses</li>
-        <li>Casa de Zevallos </li>
-      </ul>
-      <p>
-        Llego el día en el que Pelayo visitara el bierzo para ver con sus propios ojos lo que podía 
-        aportar cada casa a su ejército, pero lo que vio fue un montón de miembros de casa luchando 
-        entre sí por pequeñas y estúpidas rencillas, comparando con la gran amenaza que implicaba los 
-        ejecitos moros que se aproximaba hacia el norte.
-      </p>
-      <p>
-        Pelayo ordeno que cada cabeza de familia se reuniera con él para llegar a un acuerdo y poder 
-        luchar todos juntos contra los moros. Después de mucho dialogar o mejor dicho gritase unos a 
-        otros, Pelayo con la ayuda de sus consejeros decidido organizar un torneo. 
-      </p>
-      <p>
-        Este tendrá lugar durante el solsticio de verano. Realizándose varias pruebas de diferentes 
-        ámbitos. Acumulando cada casa diferentes puntos hasta el final del día que el mismísimo 
-        Pelayo nombrara a la casa ganadoras y la que se proclamaran como máxima dirigente de la 
-        región hasta el próximo solsticio de verano que se realizar otra vez el torneo.
-      </p>
-    </section>
-
-    <section >
-      <div id="botonesCasas">
-        <button onclick = "oviedo.vercasa('multimedia/zevallos.png')"><img classs ="escudo" src="multimedia/zevallos.png"></button>
-        <button onclick = "oviedo.vercasa('multimedia/meneses.jpg')"><img classs ="escudo" src="multimedia/meneses.jpg"></button>
-        <button onclick = "oviedo.vercasa('multimedia/osuna.png')"><img classs ="escudo" src="multimedia/osuna.png"></button>
-        <button onclick = "oviedo.vercasa('multimedia/bruton.jpg')"><img classs ="escudo" src="multimedia/bruton.jpg"></button>
-      </div>
-      <div id="casas"><p></p></div>
-    </section>
-
-
-
-    </artiicle>
-  </main>
-  <footer>
-    <a href="https://validator.w3.org/check?uri=referer">
-        <img src="multimedia/HTML5.png" alt=" HTML5 Válido!" /></a>
-
-    <a href=" http://jigsaw.w3.org/css-validator/check/referer ">
-         <img src="multimedia/CSS3.png"
-         alt="CSS Válido!" height="63" width="64"/></a>
-  </footer> 
-</body>
+        <p>Corre el siglo XIII y la gran reconquista ha empezado hacia el sur para librar todo el reino 
+          de España, por eso al bierzo ha llegado una petición de reclutamiento al gran ejecito que se 
+          formara bajo el mando de Pelayo.</p>
+        <p>
+          Por eso todas las casas de la región corren a preparar y buscar nuevos miembros para unirse a las 
+          filas del ejecito de Pelayo.
+        </p>
+        <p>
+          Aunque la causa sea noble las casas siguen teniendo sus viejas rencillas y aran lo posible por quedar 
+          por encima de las otras, cobrase viejas rencillas u otros asuntos propios. 
+        </p>
+        <p>
+          En la región predominan cuatro casas principales sombre las demás cada una de ellas teniendo su 
+          especialidad:
+        </p>
+        <ul>
+          <li>Casa Butrón</li>
+          <li>Casa Osuna </li>
+          <li>Casa de Meneses</li>
+          <li>Casa de Zevallos </li>
+        </ul>
+        <p>
+          Llego el día en el que Pelayo visitara el bierzo para ver con sus propios ojos lo que podía 
+          aportar cada casa a su ejército, pero lo que vio fue un montón de miembros de casa luchando 
+          entre sí por pequeñas y estúpidas rencillas, comparando con la gran amenaza que implicaba los 
+          ejecitos moros que se aproximaba hacia el norte.
+        </p>
+        <p>
+          Pelayo ordeno que cada cabeza de familia se reuniera con él para llegar a un acuerdo y poder 
+          luchar todos juntos contra los moros. Después de mucho dialogar o mejor dicho gritase unos a 
+          otros, Pelayo con la ayuda de sus consejeros decidido organizar un torneo. 
+        </p>
+        <p>
+          Este tendrá lugar durante el solsticio de verano. Realizándose varias pruebas de diferentes 
+          ámbitos. Acumulando cada casa diferentes puntos hasta el final del día que el mismísimo 
+          Pelayo nombrara a la casa ganadoras y la que se proclamaran como máxima dirigente de la 
+          región hasta el próximo solsticio de verano que se realizar otra vez el torneo.
+        </p>
+      </section>
+  
+      <section class=" row-padding">
+        <div class=" half">
+          <img classs="escudo" src="multimedia/zevallos.png" onclick="verCasas.vercasa('multimedia/zevallos.png')" alt="Casa de Zervallos">
+          <img classs="escudo" src="multimedia/meneses.jpg" onclick="verCasas.vercasa('multimedia/meneses.jpg')" alt="Casa de Meneses">
+          <img classs="escudo" src="multimedia/osuna.png" onclick="verCasas.vercasa('multimedia/osuna.png')" alt="Casa Osuna">
+          <img classs="escudo" src="multimedia/bruton.jpg" onclick="verCasas.vercasa('multimedia/bruton.jpg')" alt="Casa Butrón">
+        </div>
+        <div id="casas"><p></p></div>
+      </section>
+  
+  
+  
+      
+    </article></main>
+    <footer>    
+      <audio src="multimedia/fondo.mp3" preload="auto" autoplay="true" controls="" loop=""></audio>
+      <a href="https://validator.w3.org/check?uri=referer">
+          <img src="multimedia/HTML5.png" alt=" HTML5 Válido!"></a>
+  
+      <a href=" http://jigsaw.w3.org/css-validator/check/referer ">
+           <img src="multimedia/CSS3.png" alt="CSS Válido!" width="64" height="63"></a>
+    </footer> 
+  
+  </body>
 </html>
