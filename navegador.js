@@ -1,9 +1,7 @@
 "use strict";
 class Navegador{
     constructor(){ 
-      var x = window.matchMedia("(max-width: 700px)")
-      myFunction(x) // Call listener function at run time
-      x.addListener(myFunction) // Attach listener function on state changes       
+      audio();     
     }
     open() {
         document.getElementById("mySidebar").style.display = "block";
@@ -14,17 +12,88 @@ class Navegador{
         document.getElementById("mySidebar").style.display = "none";
         document.getElementById("myOverlay").style.display = "none";
       }
-    myFunction(x) {
-        if (x.matches) { // If media query matches
-          document.body.style.backgroundColor = "yellow";
-        } else {
-          document.body.style.backgroundColor = "pink";
-        }
-    }     
+     
+    audio(){
+      jQuery(document).ready(function() {
+
+        container = $('.container');
+        cover = $('.cover');
+        play = $('#play');
+        pause = $('#pause');
+        mute = $('#mute');
+        muted = $('#muted');
+        close = $('#close');
+        song = new Audio('music/track1.ogg','music/track1.mp3');
+        duration = song.duration;
       
+        if (song.canPlayType('audio/mpeg;')) {
+            song.type= 'audio/mpeg';
+            song.src= 'multimedia/fondo.mp3';
+        } else {
+            song.type= 'audio/ogg';
+            song.src= 'multimedia/fondo.ogg';
+        }      
+      
+        play.live('click', function(e) {
+          e.preventDefault();
+          song.play();
+      
+          $(this).replaceWith('<a class="button gradient" id="pause" href="" title=""></a>');
+          container.addClass('containerLarge');
+          cover.addClass('coverLarge');
+          $('#close').fadeIn(300);
+          $('#seek').attr('max',song.duration);
+        });
+      
+        pause.live('click', function(e) {
+          e.preventDefault();
+          song.pause();
+          $(this).replaceWith('<a class="button gradient" id="play" href="" title=""></a>');
+      
+        });
+      
+        mute.live('click', function(e) {
+          e.preventDefault();
+          song.volume = 0;
+          $(this).replaceWith('<a class="button gradient" id="muted" href="" title=""></a>');
+      
+        });
+      
+        muted.live('click', function(e) {
+          e.preventDefault();
+          song.volume = 1;
+          $(this).replaceWith('<a class="button gradient" id="mute" href="" title=""></a>');
+      
+        });
+      
+        $('#close').click(function(e) {
+          e.preventDefault();
+          container.removeClass('containerLarge');
+          cover.removeClass('coverLarge');
+          song.pause();
+          song.currentTime = 0;
+          $('#pause').replaceWith('<a class="button gradient" id="play" href="" title=""></a>');
+          $('#close').fadeOut(300);
+        });
+      
+      
+      
+        $("#seek").bind("change", function() {
+          song.currentTime = $(this).val();
+          $("#seek").attr("max", song.duration);
+        });
+      
+        song.addEventListener('timeupdate',function (){
+          curtime = parseInt(song.currentTime, 10);
+        $("#seek").attr("value", curtime);
+        });     
+      });
+      
+    }  
         
 }
 var nave = new  Navegador();
+
 
 
 

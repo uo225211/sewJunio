@@ -24,6 +24,12 @@
     <a href="javascript:void(0)" class="button hide-large display-topleft" id="cerrar" onclick="nave.close()">Cerrar Menu</a>  
     <div class="container">
         <h3 class="padding-64"><b>El destino </b><b>del Bierzo</b></h3>
+        <div class="player gradient">
+          <a class="button gradient" id="play" href="" title=""></a>
+          <a class="button gradient" id="mute" href="" title=""></a>       
+          <input id="Audio" type="range" id="seek" value="0" max=""/>
+          <a class="button gradient" id="close" href="" title=""></a>			
+		</div>
     </div>
     <div class="bar-block">
       <a class="bar-item button hover-color" href="index.html">Inicio</a>
@@ -34,7 +40,6 @@
       <a class="bar-item button hover-color" href="suscrición.html">Suscrición</a>
       <a class="bar-item button hover-color" href="horario.html">Horario</a>
       <a class="bar-item button hover-color" href="administración.html">Administración</a>
-      <audio src="multimedia/fondo.mp3" preload="auto" autoplay="true" controls="" loop=""></audio>
     </div>       
   </nav>
           
@@ -49,11 +54,9 @@
   
   <main id="contenido" class="main">
     <article >
-      <section class=" container" id="pagina_titulo">
+      <section  class="container" id ="pagina">
         <h1 class=" xxxlarge  text-blue"><b>Historia</b></h1>
         <hr class="round round-blue">
-      </section> 
-      <section>
         <p>Corre el siglo XIII y la gran reconquista ha empezado hacia el sur para librar todo el reino 
           de España, por eso al bierzo ha llegado una petición de reclutamiento al gran ejecito que se 
           formara bajo el mando de Pelayo.</p>
@@ -95,11 +98,11 @@
       </section>
   
       <section class=" row-padding">
-        <div class=" half">
-          <img classs="escudo" src="multimedia/zevallos.png" onclick="verCasas.vercasa('multimedia/zevallos.png')" alt="Casa de Zervallos">
-          <img classs="escudo" src="multimedia/meneses.jpg" onclick="verCasas.vercasa('multimedia/meneses.jpg')" alt="Casa de Meneses">
-          <img classs="escudo" src="multimedia/osuna.png" onclick="verCasas.vercasa('multimedia/osuna.png')" alt="Casa Osuna">
-          <img classs="escudo" src="multimedia/bruton.jpg" onclick="verCasas.vercasa('multimedia/bruton.jpg')" alt="Casa Butrón">
+        <div class= "half">
+          <img src="multimedia/zevallos.png" onclick="verCasas.vercasa('multimedia/zevallos.png')" alt="Casa de Zervallos">
+          <img src="multimedia/meneses.jpg" onclick="verCasas.vercasa('multimedia/meneses.jpg')" alt="Casa de Meneses">
+          <img src="multimedia/osuna.png" onclick="verCasas.vercasa('multimedia/osuna.png')" alt="Casa Osuna">
+          <img src="multimedia/bruton.jpg" onclick="verCasas.vercasa('multimedia/bruton.jpg')" alt="Casa Butrón">
         </div>
         <div id="casas"><p></p></div>
       </section>
@@ -109,7 +112,6 @@
       
     </article></main>
     <footer>    
-      <audio src="multimedia/fondo.mp3" preload="auto" autoplay="true" controls="" loop=""></audio>
       <a href="https://validator.w3.org/check?uri=referer">
           <img src="multimedia/HTML5.png" alt=" HTML5 Válido!"></a>
   
