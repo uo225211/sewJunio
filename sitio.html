@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+
+<html lang="es">
+  
+<head>
+    
+  <meta charset="UTF-8">
+  <title>El destino del Bierzo</title>
+  <meta name="description" content="Pagina del rol en vivo: Destino del Bierzo">
+  <meta name="author" content="Beatriz Arbizu Ramírez">
+  <meta name="keywords" content="rol,bierzo,destino, reglas, asociación">    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script scr="./js/navegador.js"></script>
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  
+  </head>
+  <body> 
+    <script scr="navegador.js"></script>
+    <audio id ="audio" src="multimedia/fondo.mp3" preload="auto" autoplay="true" loop></audio> 	
+    
+  <!-- Sidebar/menu -->
+  <nav class="sidebar colorFondo collapse top large padding" id="mySidebar">  
+    <a href="javascript:void(0)" class="button hide-large display-topleft" id="cerrar" onclick="nave.close()">Cerrar Menu</a>  
+    <div class="container">
+        <h3 class="padding-64"><b>El destino </b><b>del Bierzo</b></h3>
+        <div class="row-padding half" id="audio">
+          <img id="pause/play" onclick="musica.play()" alt="pause/play">
+          <img id="sound/notSound" src="multimedia/sound.png" onclick="musica.sound()" alt="pause/play">
+          <script src="./js/musica.js"></script>
+        </div><!-- / player -->
+    </div>
+    <div class="bar-block">
+      <a class="bar-item button hover-color" href="index.html">Inicio</a>
+      <a class="bar-item button hover-color" href="historia.html">Historia del rol en vivo</a>
+      <a class="bar-item button hover-color" href="reglas.html">Reglas del evento </a>
+      <a class="bar-item button hover-color" href="sitio.html">Localización y tiempo</a>
+      <a class="bar-item button hover-color" href="asociaciones.html">Agradecimientos</a>
+      <a class="bar-item button hover-color" href="suscrición.html">Suscrición</a>
+      <a class="bar-item button hover-color" href="horario.html">Horario</a>
+      <a class="bar-item button hover-color" href="administración.html">Administración</a>
+    </div>       
+  </nav>
+          
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large colorFondo xlarge padding">
+    <a href="javascript:void(0)" class="button colorFondo margin-right" onclick="nave.open()">☰</a>
+    <span>El destino del Bierzo</span>
+  </header>
+  
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="nave.close()" title="close side menu" id="myOverlay"></div>
+  
+  <main id="contenido" class="main">
+      <div  class="container" id="mapa"></div>
+      <scrip scr="./js/sitios.js"></scrip>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeM1gDxgj38G16Xx7lvrFhAT_FoauWUvE&callback=initMap"
+      type="text/javascript"></script>
+      
+      
+  
+      
+    </article></main>
+    <footer>    
+		
+      <a href="https://validator.w3.org/check?uri=referer">
+          <img src="multimedia/HTML5.png" alt=" HTML5 Válido!"></a>
+  
+      <a href=" http://jigsaw.w3.org/css-validator/check/referer ">
+           <img src="multimedia/CSS3.png" alt="CSS Válido!" width="64" height="63"></a>
+    </footer> 
+  
+  </body>
+</html>

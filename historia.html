@@ -12,9 +12,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script scr="navegador.js"></script>
+    <script scr="./js/navegador.js"></script>
     <link rel="stylesheet" type="text/css" href="estilo.css">
-    <script src="pasarXml.js"></script>
+    <script src="./js/pasarXml.js"></script>
     
   </head>
   <body> 
@@ -24,18 +24,12 @@
     <a href="javascript:void(0)" class="button hide-large display-topleft" id="cerrar" onclick="nave.close()">Cerrar Menu</a>  
     <div class="container">
         <h3 class="padding-64"><b>El destino </b><b>del Bierzo</b></h3>
-        <div class="player gradient">
-          <a class="button gradient" id="play" href="" title=""></a>
-          <a class="button gradient" id="mute" href="" title=""></a>       
-          <input id="Audio" type="range" id="seek" value="0" max=""/>
-          <a class="button gradient" id="close" href="" title=""></a>			
-		</div>
     </div>
     <div class="bar-block">
       <a class="bar-item button hover-color" href="index.html">Inicio</a>
       <a class="bar-item button hover-color" href="historia.html">Historia del rol en vivo</a>
       <a class="bar-item button hover-color" href="reglas.html">Reglas del evento </a>
-      <a class="bar-item button hover-color" href="recomendacionesyloca.html">Recomendaciones y localización</a>
+      <a class="bar-item button hover-color" href="sitio.html">Localización y tiempo</a>
       <a class="bar-item button hover-color" href="asociaciones.html">Agradecimientos</a>
       <a class="bar-item button hover-color" href="suscrición.html">Suscrición</a>
       <a class="bar-item button hover-color" href="horario.html">Horario</a>
@@ -96,21 +90,25 @@
           región hasta el próximo solsticio de verano que se realizar otra vez el torneo.
         </p>
       </section>
-  
-      <section class=" row-padding">
-        <div class= "half">
-          <img src="multimedia/zevallos.png" onclick="verCasas.vercasa('multimedia/zevallos.png')" alt="Casa de Zervallos">
-          <img src="multimedia/meneses.jpg" onclick="verCasas.vercasa('multimedia/meneses.jpg')" alt="Casa de Meneses">
-          <img src="multimedia/osuna.png" onclick="verCasas.vercasa('multimedia/osuna.png')" alt="Casa Osuna">
-          <img src="multimedia/bruton.jpg" onclick="verCasas.vercasa('multimedia/bruton.jpg')" alt="Casa Butrón">
-        </div>
-        <div id="casas"><p></p></div>
-      </section>
+   </article>
+      <section class="container">
+		
+			<div class=" row-padding">
+			  <img src="multimedia/zevallos.png" onclick="verCasas.vercasa('multimedia/zevallos.png')" alt="Casa de Zervallos">
+			  <img src="multimedia/meneses.jpg" onclick="verCasas.vercasa('multimedia/meneses.jpg')" alt="Casa de Meneses">
+			  <img src="multimedia/osuna.png" onclick="verCasas.vercasa('multimedia/osuna.png')" alt="Casa Osuna">
+			  <img src="multimedia/bruton.jpg" onclick="verCasas.vercasa('multimedia/bruton.jpg')" alt="Casa Butrón">
+			</div>
+		
+	 </section>	
+        <div class="container" id="casas"><p></p></div>
+     
   
   
   
       
-    </article></main>
+   
+	</main>
     <footer>    
       <a href="https://validator.w3.org/check?uri=referer">
           <img src="multimedia/HTML5.png" alt=" HTML5 Válido!"></a>

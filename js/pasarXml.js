@@ -53,13 +53,14 @@ class ArchivoXML {
                 var node=document.createElement("DIV");
                 for (var k=0; k<casas.length;k++){                
                     if (casas[k].escudo==escudoComparar){
-                        var node2 = document.createElement("h2");                 // Create a <h2> node
+                        var node2 = document.createElement("h2"); 
+						node2.setAttribute("class", "text_center");		// Create a <h2> node
                         var textnode = document.createTextNode(casas[k].nombre); 
                         node2.appendChild(textnode); 
                         node.appendChild(node2); 
                         var node3 = document.createElement("IMG");  // Create a <img> node
                         node3.setAttribute("src", casas[k].escudo);
-                        node3.setAttribute("class", "escudo");
+                        node3.setAttribute("class", "imgen_centro");
                         node.appendChild(node3); 
                         var node4 = document.createElement("p");                 // Create a <p> node
                         var textnode = document.createTextNode(casas[k].historia); 
@@ -78,11 +79,13 @@ class ArchivoXML {
                         var aux=casas[k].personajes;
                         for (var l=0; l<aux.length;l++){
                             var per=aux[l];
-                            var node2 = document.createElement("h3");                 // Create a <h2> node
+                            var node2 = document.createElement("h3");  
+							node2.setAttribute("class", "text_center");							// Create a <h2> node
                             var textnode = document.createTextNode(per.nombre ); 
                             node2.appendChild(textnode); 
                             node.appendChild(node2); 
                             var node2 = document.createElement("h4");                 // Create a <h2> node
+							node2.setAttribute("class", "text_center");
                             var textnode = document.createTextNode(per.posicion); 
                             node2.appendChild(textnode); 
                             node.appendChild(node2); 

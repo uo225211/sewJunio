@@ -27,7 +27,7 @@ legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}t
 html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
 h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
 .serif{font-family:serif}.sans-serif{font-family:sans-serif}.cursive{font-family:cursive}.monospace{font-family:monospace}
-h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0}.wide{letter-spacing:4px}
+h1,h2,h3,h4,h5,h6{font-family:"Segoe UI",Arial,sans-serif;font-weight:400;margin:10px 0;text-align: center; }.wide{letter-spacing:4px}
 hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .image{max-width:100%;height:auto}img{vertical-align:middle}a{color:inherit}
 .table,.table-all{border-collapse:collapse;border-spacing:0;width:100%;display:table}.table-all{border:1px solid #ccc}
@@ -127,9 +127,14 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .greyscale-max,.grayscale-max,.hover-greyscale:hover,.hover-grayscale:hover{filter:grayscale(100%)}
 .greyscale,.grayscale{filter:grayscale(75%)}.greyscale-min,.grayscale-min{filter:grayscale(50%)}
 .sepia{filter:sepia(75%)}.sepia-max,.hover-sepia:hover{filter:sepia(100%)}.sepia-min{filter:sepia(50%)}
-.tiny{font-size:10px!important}.small{font-size:12px!important}.medium{font-size:15px!important}.large{font-size:18px!important}
-.xlarge{font-size:24px!important}.xxlarge{font-size:36px!important}.xxxlarge{font-size:48px!important}.jumbo{font-size:64px!important}
-.left-align{text-align:left!important}.right-align{text-align:right!important}.justify{text-align:justify!important}.center{text-align:center!important}
+.tiny{font-size:10px!important}
+.small{font-size:12px!important}.medium{font-size:15px!important}.large{font-size:18px!important}
+.xlarge{font-size:24px!important}
+.xxlarge{font-size:36px!important}
+.xxxlarge{font-size:48px!important}
+.jumbo{font-size:64px!important}
+.left-align{text-align:left!important}.right-align{text-align:right!important}.justify{text-align:justify!important}
+.center{text-align:center!important}
 .border-0{border:0!important}.border{border:1px solid #ccc!important}
 .border-top{border-top:1px solid #ccc!important}.border-bottom{border-bottom:1px solid #ccc!important}
 .border-left{border-left:1px solid #ccc!important}.border-right{border-right:1px solid #ccc!important}
@@ -225,6 +230,8 @@ body {
     font-size: 50px;
     text-align: center;     
 }
+.text_center{text-align: center; }
+.imgen_centro{vertical-align: middle;display:block; margin:auto}
 
 /*(1,0,0)*/
 #fondo{
@@ -247,4 +254,9 @@ body {
 
 .round-blue{
   border:5px solid #2320e4;
+}
+
+#mapa {
+  height: 500px;
+  width: 100%;
 }
