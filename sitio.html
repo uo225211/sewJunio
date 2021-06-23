@@ -11,15 +11,13 @@
   <meta name="keywords" content="rol,bierzo,destino, reglas, asociación">    
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script scr="./js/navegador.js"></script>
-  <link rel="stylesheet" type="text/css" href="estilo.css">
   
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <script src="./js/sitios.js"></script>
   </head>
-  <body> 
-    <script scr="navegador.js"></script>
+  <body>     
     <audio id ="audio" src="multimedia/fondo.mp3" preload="auto" autoplay="true" loop></audio> 	
-    
+    <script scr="./js/navegador.js"></script>
   <!-- Sidebar/menu -->
   <nav class="sidebar colorFondo collapse top large padding" id="mySidebar">  
     <a href="javascript:void(0)" class="button hide-large display-topleft" id="cerrar" onclick="nave.close()">Cerrar Menu</a>  
@@ -53,10 +51,13 @@
   <div class="overlay hide-large" onclick="nave.close()" title="close side menu" id="myOverlay"></div>
   
   <main id="contenido" class="main">
-      <div  class="container" id="mapa"></div>
-      <scrip scr="./js/sitios.js"></scrip>
+        <a href="javascript:void(0)" class="button colorFondo margin-right" onclick="sitio.irGoogle()">Ir a google</a>
+        
+
+      
+      <!--<scrip scr="./js/sitios.js"></scrip>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeM1gDxgj38G16Xx7lvrFhAT_FoauWUvE&callback=initMap"
-      type="text/javascript"></script>
+      type="text/javascript"></script>-->
       
       
   

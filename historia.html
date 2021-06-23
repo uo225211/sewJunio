@@ -12,18 +12,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script scr="./js/navegador.js"></script>
     <link rel="stylesheet" type="text/css" href="estilo.css">
-    <script src="./js/pasarXml.js"></script>
+    <script src="pasarXml.js"></script>
     
   </head>
   <body> 
-    <script scr="navegador.js"></script>
+    <audio id ="audio" src="multimedia/fondo.mp3" preload="auto" autoplay="true" loop></audio> 	
+    
   <!-- Sidebar/menu -->
   <nav class="sidebar colorFondo collapse top large padding" id="mySidebar">  
     <a href="javascript:void(0)" class="button hide-large display-topleft" id="cerrar" onclick="nave.close()">Cerrar Menu</a>  
     <div class="container">
         <h3 class="padding-64"><b>El destino </b><b>del Bierzo</b></h3>
+        <div class="row-padding half" id="audio">
+          <img id="pause/play" onclick="musica.play()" alt="pause/play">
+          <img id="sound/notSound" src="multimedia/sound.png" onclick="musica.sound()" alt="pause/play">
+          <script src="./js/musica.js"></script>
+        </div><!-- / player -->
     </div>
     <div class="bar-block">
       <a class="bar-item button hover-color" href="index.html">Inicio</a>
