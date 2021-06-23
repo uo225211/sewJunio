@@ -11,7 +11,7 @@
   <meta name="keywords" content="rol,bierzo,destino, reglas, asociación">    
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="estilo.css">
   <script src="./js/sitios.js"></script>
   </head>
@@ -51,14 +51,27 @@
   <div class="overlay hide-large" onclick="nave.close()" title="close side menu" id="myOverlay"></div>
   
   <main id="contenido" class="main">
+    <article  class="container" id ="pagina">
+      <h1 class=" xxxlarge  text-blue"><b>Ruta al lugar</b></h1>
+      <hr class="round round-blue">
+      <section class="container">
+      <p>A continuacuín se añade un lik a google donde ya te prepara la ruta hasta el destino del rol en vivo</p>
+      <div class="center">
         <a href="javascript:void(0)" class="button colorFondo margin-right" onclick="sitio.irGoogle()">Ir a google</a>
-        
-
+      </div>
+      </section>
       
       <!--<scrip scr="./js/sitios.js"></scrip>
       <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeM1gDxgj38G16Xx7lvrFhAT_FoauWUvE&callback=initMap"
       type="text/javascript"></script>-->
-      
+      <h1 class=" xxxlarge  text-blue"><b>¿Que tiempo hace?</b></h1>
+      <hr class="round round-blue">
+      <section class="container" id="tiempo">
+        <p id="cambioTiempo"></p>
+        <div class="center">
+        <a href="javascript:void(0)" class="button colorFondo padding-large  hover-color" onclick="meteo.cargarDatos()">Refrecar Tiempo</a>
+        </div>
+      </section>
       
   
       

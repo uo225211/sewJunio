@@ -13,19 +13,20 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" type="text/css" href="estiloTablas.css">
     <script src="pasarXml.js"></script>
     
   </head>
   <body> 
-    <audio id ="audio" src="multimedia/fondo.mp3" preload="auto" autoplay="true" loop></audio> 	
+    <audio id ="audio" src="multimedia/fondo.mp3" preload="auto" autoplay loop></audio> 	
     
   <!-- Sidebar/menu -->
   <nav class="sidebar colorFondo collapse top large padding" id="mySidebar">  
     <a href="javascript:void(0)" class="button hide-large display-topleft" id="cerrar" onclick="nave.close()">Cerrar Menu</a>  
     <div class="container">
         <h3 class="padding-64"><b>El destino </b><b>del Bierzo</b></h3>
-        <div class="row-padding half" id="audio">
-          <img id="pause/play" onclick="musica.play()" alt="pause/play">
+        <div class="row-padding half">
+          <img id="pause/play" src="multimedia/play.png" onclick="musica.play()" alt="pause/play">
           <img id="sound/notSound" src="multimedia/sound.png" onclick="musica.sound()" alt="pause/play">
           <script src="./js/musica.js"></script>
         </div><!-- / player -->
@@ -51,11 +52,13 @@
   <!-- Overlay effect when opening sidebar on small screens -->
   <div class="overlay hide-large" onclick="nave.close()" title="close side menu" id="myOverlay"></div>
   
-  <main id="contenido" class="main">
-    <article >
-      <section  class="container" id ="pagina">
-        <h1 class=" xxxlarge  text-blue"><b>Historia</b></h1>
-        <hr class="round round-blue">
+  <main id="contenido" class="main container">
+    <section  class="container header">
+    <h1 class=" xxxlarge  text-blue"><b>Historia y Familias</b></h1>
+    <hr class="round round-blue">    
+  </section>
+      <section  class="container" id ="pagina"> 
+        <h2 class=" xxxlarge"><b>Historia</b></h2>    
         <p>Corre el siglo XIII y la gran reconquista ha empezado hacia el sur para librar todo el reino 
           de España, por eso al bierzo ha llegado una petición de reclutamiento al gran ejecito que se 
           formara bajo el mando de Pelayo.</p>
@@ -95,9 +98,8 @@
           región hasta el próximo solsticio de verano que se realizar otra vez el torneo.
         </p>
       </section>
-   </article>
       <section class="container">
-		
+        <h2 class=" xxxlarge"><b>Familias</b></h2>
 			<div class=" row-padding">
 			  <img src="multimedia/zevallos.png" onclick="verCasas.vercasa('multimedia/zevallos.png')" alt="Casa de Zervallos">
 			  <img src="multimedia/meneses.jpg" onclick="verCasas.vercasa('multimedia/meneses.jpg')" alt="Casa de Meneses">

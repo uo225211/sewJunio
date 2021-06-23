@@ -48,3 +48,65 @@ class Geolocalización {
     }
 }
 var sitio = new Geolocalización();
+
+"use strict";
+class Meteo {
+    constructor(){
+        this.apikey = "778cf9af97a74c00ae40358414b8d072";
+        this.latitud = "43.5439586";
+        this.longitud = "-5.6732480";
+        this.unidades = "&units=metric";
+        this.idioma = "&lang=es";
+        this.url = "https://api.weatherbit.io/v2.0/current?lat=" + this.latitud +"&lon=" + this.longitud + "&key=" + this.apikey +
+		"&include=minutely";
+        this.correcto = "¡Todo correcto! XML recibido de <a href='https://www.weatherbit.io/api/'>Weatherbit</a>"
+        this.cargarDatos();
+    }
+    cargarDatos(){
+        $.ajax({
+            dataType: "json",
+            url: this.url,
+            method: 'GET',
+            success: function(datos){
+                    //Presentación de los datos contenidos en JSON
+                    var node=document.createElement("DIV");
+                    var node2 = document.createElement("ul"); 
+                    var node3 = document.createElement("li"); 
+                    var textnode = document.createTextNode("Temperatura: " + datos.data[0].temp +" grados Celsius" ); 
+                    node3.appendChild(textnode); 
+                    node2.appendChild(node3);
+                    var node3 = document.createElement("li"); 
+                    var textnode = document.createTextNode("Temperatura aparente: " + datos.data[0].app_temp+" grados Celsius" ); 
+                    node3.appendChild(textnode); 
+                    node2.appendChild(node3);
+                    var node3 = document.createElement("li"); 
+                    var textnode = document.createTextNode("Velocidad viento: " + datos.data[0].wind_spd+" m / s" ); 
+                    node3.appendChild(textnode); 
+                    node2.appendChild(node3);
+                    var node3 = document.createElement("li"); 
+                    var textnode = document.createTextNode("Humedad relativa: " + datos.data[0].rh+" %" ); 
+                    node3.appendChild(textnode); 
+                    node2.appendChild(node3);
+                    var node3 = document.createElement("li"); 
+                    var textnode = document.createTextNode("Visibilidad: " + datos.data[0].vis+" Km" ); 
+                    node3.appendChild(textnode); 
+                    node2.appendChild(node3);
+                    var node3 = document.createElement("li"); 
+                    var textnode = document.createTextNode("Nubosidad: " + datos.data[0].app_temp+"  %os Celsius" );                        
+                    node3.appendChild(textnode); 
+                    node2.appendChild(node3);
+                    node.appendChild(node2);      
+                    node.setAttribute("id", "cambioTiempo");                   
+                    var item = document.getElementById("tiempo");
+                    item.replaceChild(node, document.getElementById("cambioTiempo"));
+                },
+            error:function(){
+                $("h3").html("¡Tenemos problemas! No puedo obtener JSON de <a href='http://openweathermap.org'>OpenWeatherMap</a>"); 
+                $("h4").remove();
+                $("pre").remove();
+                $("p").remove();
+                }
+        });
+    }
+}
+var meteo = new Meteo();

@@ -6,43 +6,62 @@
     
   <meta charset="UTF-8">
   <title>El destino del Bierzo</title>
-  <META NAME=description CONTENT="Pagina del rol en vivo: Destino del Bierzo"/>
-  <META NAME=author CONTENT="Beatriz Arbizu Ramírez"/>
-  <meta name=keywords content="rol,bierzo,destino, reglas, asociación"/>    
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-
+  <meta name="description" content="Pagina del rol en vivo: Destino del Bierzo">
+  <meta name="author" content="Beatriz Arbizu Ramírez">
+  <meta name="keywords" content="rol,bierzo,destino, reglas, asociación">    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <script src="pasarXml.js"></script>
   
-  <link rel="stylesheet" type="text/css" href="estilo.css" />
 </head>
-<body>
-  <header class="Titulo">
-      <p>El destino del Bierzo</p>
-  </header> 
-  <main class="row">
-      <aside class="leftcolumn">
-          <nav>
-              
-              <ul>
-                  <li><a href="index.html">Portada</a></li>
-                  <li><a href="historia.html">Historia del rol en vivo</a></li>
-                  <li><a class="active" href="reglas.html">Normas del evento </a></li>
-                  <li><a href="recomendacionesyloca.html">Recomendaciones y localización</a></li>
-                  <li><a href="asociaciones.html">Agradecimientos</a></li>
-                  <li><a href="suscrición.html">Suscrición</a></li>
-                  <li><a href="horario.html">Horario</a></li>
-                  <li><a href="administración.html">Administración</a></li>
-              </ul>
-          </nav>
-          <audio src="multimedia/fondo.mp3" preload="auto" autoplay="true" controls loop></audio>
-      </aside>
-    <article class="rightcolumn">
-      <h1>NORMAS DEL EVENTO</h1>
+<body> 
+  <audio id ="audio" src="multimedia/fondo.mp3" preload="auto" autoplay="true" loop></audio> 	
+  
+<!-- Sidebar/menu -->
+<nav class="sidebar colorFondo collapse top large padding" id="mySidebar">  
+  <a href="javascript:void(0)" class="button hide-large display-topleft" id="cerrar" onclick="nave.close()">Cerrar Menu</a>  
+  <div class="container">
+      <h3 class="padding-64"><b>El destino </b><b>del Bierzo</b></h3>
+      <div class="row-padding half" id="audio">
+        <img id="pause/play" onclick="musica.play()" alt="pause/play">
+        <img id="sound/notSound" src="multimedia/sound.png" onclick="musica.sound()" alt="pause/play">
+        <script src="./js/musica.js"></script>
+      </div><!-- / player -->
+  </div>
+  <div class="bar-block">
+    <a class="bar-item button hover-color" href="index.html">Inicio</a>
+    <a class="bar-item button hover-color" href="historia.html">Historia del rol en vivo</a>
+    <a class="bar-item button hover-color" href="reglas.html">Reglas del evento </a>
+    <a class="bar-item button hover-color" href="sitio.html">Localización y tiempo</a>
+    <a class="bar-item button hover-color" href="asociaciones.html">Agradecimientos</a>
+    <a class="bar-item button hover-color" href="suscrición.html">Suscrición</a>
+    <a class="bar-item button hover-color" href="horario.html">Horario</a>
+    <a class="bar-item button hover-color" href="administración.html">Administración</a>
+  </div>       
+</nav>
+        
+<!-- Top menu on small screens -->
+<header class="container top hide-large colorFondo xlarge padding">
+  <a href="javascript:void(0)" class="button colorFondo margin-right" onclick="nave.open()">☰</a>
+  <span>El destino del Bierzo</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="overlay hide-large" onclick="nave.close()" title="close side menu" id="myOverlay"></div>
+
+<main id="contenido" class="main">
+  <article>
+  <section  class="container" id ="pagina">
+    <h1 class=" xxxlarge  text-blue"><b>NORMAS DEL EVENTO</b></h1>
+    <hr class="round round-blue">
        <p> El incumplimiento de estas normas será penalizado por los masters de acorde a la 
          gravedad de la omisión de la normativa, pudiendo ser desde perder un combate, hasta 
          la expulsión del evento.
        </p>
        <section class="normas">
-          <h2>RESPONSABILIDAD PERSONAL</h2>
+        <h2 class=" xxxlarge  text-blue"><b>NORMAS DEL EVENTO</b></h2>
           <ul>
             <li>Cada uno acude al evento voluntariamente y bajo su propia responsabilidad. 
               Por lo tanto, no nos hacemos responsables del daño que os hagáis. Por favor 
@@ -54,7 +73,7 @@
           </ul>   
       </section>
       <section class="normas">
-        <h2>RESPONSABILIDAD SOBRE LOS OBJETOS</h2>
+        <h2 class=" xxxlarge  text-blue"><b>RESPONSABILIDAD SOBRE LOS OBJETOS</b></h2>
         <p>
           La organización pondrá en juego para su uso ciertos objetos. Si algún jugador por acción 
           voluntaria, o involuntaria rompiese alguno de estos objetos, seria responsables del pago d
@@ -63,7 +82,7 @@
         </p>
       </section>
       <section class="normas">
-        <h2>CAMBIO DE PROPIEDAD DE OBJETOS DURANTE EL JUEGO</h2>
+        <h2 class=" xxxlarge  text-blue"><b>CAMBIO DE PROPIEDAD DE OBJETOS DURANTE EL JUEGO</b></h2>
         <p>
             Durante la actividad no se podrá saquear el cuerpo de ningún personaje, en cambio sí se 
             podrá sustraer ciertos objetos especificados por los masters (material de atrezo, Ej.: monedas 
@@ -71,7 +90,7 @@
         </p> 
       </section>
       <section class="normas">
-        <h2>DURACIÓN DEL EVENTO</h2>
+        <h2 class=" xxxlarge  text-blue"><b>DURACIÓN DEL EVENTO</b></h2>
         <p>
           La partida tendrá lugar el sábado 27 de agosto de 2021, desde las 11:00h. Hasta las 20:00h. 
           Excepto causa mayor (clima, etc.), en cuyo caso la organización avisará del cese de la actividad 
@@ -79,7 +98,7 @@
         </p> 
       </section>
       <section class="normas">
-        <h2>NORMAS CÍVICAS</h2>
+        <h2 class=" xxxlarge  text-blue"><b>NORMAS CÍVICAS</b></h2>
         <ol>
           <li>No está permitida la tenencia, el uso, el tráfico ni el consumo de alcohol o de sustancias 
             estupefacientes durante el evento. Si alguien porta medicamentos, rogamos que sea con su 
@@ -99,7 +118,7 @@
         </ol>
       </section>
       <section class="normas">
-        <h2>SOFTCOMBAT</h2>
+        <h2 class=" xxxlarge  text-blue"><b>SOFTCOMBAT</b></h2>
         <ol>
           <li>Daño: un roce en ropa o cuerpo no contará como válido a la hora de descontarse los Puntos 
             de Vida, tiene que ser un golpe directo.
@@ -127,7 +146,7 @@
         </ol>
       </section>
       <section class="normas">
-        <h2>NORMATIVA DE SEGURIDAD</h2>
+        <h2 class=" xxxlarge  text-blue"><b>NORMATIVA DE SEGURIDAD</b></h2>
         <ul>
           <li>Queda prohibido salir de las zonas delimitadas para el evento, salvo necesidad, donde será informado 
             anteriormente a un organizador.
@@ -145,7 +164,7 @@
         </ul>
       </section>
       <section class="normas">
-        <h2>INFORMACION, AVISOS Y ADVERTENCIAS</h2>
+        <h2 class=" xxxlarge  text-blue"><b>INFORMACION, AVISOS Y ADVERTENCIAS</b></h2>
         <ul>
           <li>El evento se realizara al aire libre, en caso de 
             tener alguna alergia a plantas insectos se recomiendo llevar la medicación.

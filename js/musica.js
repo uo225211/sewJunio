@@ -24,7 +24,7 @@ play() {
 }
   
 sound(){
-	if (this.audio.paused){
+	if (this.audio.muted){
 		this.audio.volume = 0;
 		document.getElementById("sound/notSound").setAttribute("src", "multimedia/notsound.png");
 	}
@@ -68,29 +68,6 @@ class Navegador{
     close() {
         document.getElementById("mySidebar").style.display = "none";
         document.getElementById("myOverlay").style.display = "none";
-      }
-    
-      play() {
-        if (document.getElementById("pause/play").getAttribute("src")=="multimedia/play.png"){
-          this.audio.play();
-          document.getElementById("pause/play").setAttribute("src", "multimedia/pause.png");
-        }
-        else{
-          this.audio.play();
-          document.getElementById("pause/play").setAttribute("src", "multimedia/play.png");
-        }
-             
-      }
-        
-      sound(){
-        if (document.getElementById("sound/notSound").getAttribute("src")=="multimedia/sound.png"){
-          this.audio.volume = 0;
-          document.getElementById("sound/notSound").setAttribute("src", "multimedia/notsound.png");
-        }
-        else{
-          this.audio.volume = 0.7;
-          document.getElementById("sound/notSound").setAttribute("src", "multimedia/sound.png");
-        }
              
       }
 }
