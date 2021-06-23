@@ -106,4 +106,22 @@ class ArchivoXML {
     }
         
 }
-var oviedo = new ArchivoXML("casas.xml");
+var verCasas = new ArchivoXML("casas.xml");
+
+"use strict";
+class Navegador{
+    constructor(){        
+    }
+    open() {
+        document.getElementById("mySidebar").style.display = "block";
+        document.getElementById("myOverlay").style.display = "block";
+      }
+       
+    close() {
+        document.getElementById("mySidebar").style.display = "none";
+        document.getElementById("myOverlay").style.display = "none";
+      }
+    
+        
+}
+var nave = new  Navegador();
