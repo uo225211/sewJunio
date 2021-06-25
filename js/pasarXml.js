@@ -109,22 +109,5 @@ class ArchivoXML {
     }
         
 }
-var verCasas = new ArchivoXML("casas.xml");
+var verCasas = new ArchivoXML("https://uo225211.github.io/sewJunio/casas.xml");
 
-"use strict";
-class Navegador{
-    constructor(){        
-    }
-    open() {
-        document.getElementById("mySidebar").style.display = "block";
-        document.getElementById("myOverlay").style.display = "block";
-      }
-       
-    close() {
-        document.getElementById("mySidebar").style.display = "none";
-        document.getElementById("myOverlay").style.display = "none";
-      }
-    
-        
-}
-var nave = new  Navegador();

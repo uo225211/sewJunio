@@ -1,55 +1,47 @@
-@media (max-width: 992px) {
-  .sidebar.collapse {
-    display : none  ;
-  }
-  .main {
-      margin-left : 0 !important ;
-      margin-right : 0 !important ;
-  }
-}
-@media (max-width:1205px){.auto{max-width:95%}}
   table {
-    font-size: 18px;
+    font-size: 16px;
     border-spacing: 15px;
     text-align: center;
     vertical-align: center;
-    margin: auto;
+    margin: 0;
     border-collapse: collapse;
     width: 100%;
   }
   th,td {
     border: 1px solid #ddd;
-    font-size: 18px;
+    font-size: 16px;
     padding: 5px;
     text-align: center;
   }
   th{
-  background-color: #9864c9cb;
+  background-color: #2320e4;
   color: white;
   }
 
-  #BandaSonora {
-    
-    border-collapse: collapse;
-    font-size: 18px;
-    border-spacing: 15px;
-    text-align: center;
-    margin: auto;
-    vertical-align: center;
-    width: 100%;
-  }
-  #BandaSonora th, #BandaSonora td {
-    padding: 5px;
-    text-align: center;
-  }
-  #BandaSonora th{
-  background-color: #9864c9cb;
-  color: white;
-  }
-  
 
-p{
-  font-size: 18px;
-  line-height: 2.5;
-}
+  @media screen and (max-width: 600px) {
+    thead {
+        display: none;
+    }
+    tr:nth-of-type(2n) {
+        background-color: inherit;
+        color: inherit;
+    }
+    tr td:first-child {
+        background: #f0f0f0;
+        color: inherit;
+        font-weight:bold;
+        font-size:1.3em;
+    }
+    tbody td {
+        display: block;
+        text-align:center;
+    }
+        tbody td:before {
+          content: attr(data-th);
+          display: block;
+          text-align:center;
+      }
+    }
+
 

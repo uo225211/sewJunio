@@ -13,13 +13,16 @@ xsi:schemaLocation="http://www.uniovi.es casas.xsd">
         <caracteriticas>
                 Grandes arqueros
         </caracteriticas>
-        <rango>menor</rango>
+        <rango>Menor</rango>
         <personajes>
-            <personaje nombrePersonaje="">
+            <personaje nombrePersonaje="Alfonso Zevallos">
                 <posicion>
-                
+                Patriarca
                 </posicion>
-                <descripcion></descripcion>
+                <descripcion>
+                    Le gusta mucho la caza y aúnque s muy responsable con el papeleo, siempre encueatra
+                    tiempo para practicar con el arco.
+                </descripcion>
             </personaje>
         </personajes>
     </casa>
@@ -35,7 +38,7 @@ xsi:schemaLocation="http://www.uniovi.es casas.xsd">
         <caracteriticas>
                 Grandes guerreros (escudo y espada)
         </caracteriticas>
-        <rango>medio</rango>
+        <rango>Alta</rango>
         <personajes>
             <personaje nombrePersonaje="Alicia Brutón">
                 <posicion>Matriarca</posicion>
@@ -61,13 +64,13 @@ xsi:schemaLocation="http://www.uniovi.es casas.xsd">
         <caracteriticas>
                 Nobles
         </caracteriticas>
-        <rango>Medio-Alto</rango>
+        <rango>Alto</rango>
         <personajes>
-            <personaje nombrePersonaje="">
+            <personaje nombrePersonaje="Miguel Osuna">
                 <posicion>
-                
+                    Patriarca
                 </posicion>
-                <descripcion></descripcion>
+                <descripcion>Si de su clan se sabe poco, menos de él. Es muy reservado y a la hora de tomar decisiones no tiembla</descripcion>
                 <fotografia> 
                     </fotografia>
             </personaje>
@@ -84,13 +87,13 @@ xsi:schemaLocation="http://www.uniovi.es casas.xsd">
         <caracteriticas>
                 Comerciantes
         </caracteriticas>
-        <rango>Media</rango>
+        <rango>Alta</rango>
         <personajes>
-            <personaje nombrePersonaje="">
+            <personaje nombrePersonaje="Pedro Meneses">
                 <posicion>
-                
+                    Patriarca
                 </posicion>
-                <descripcion></descripcion>
+                <descripcion>Hay que tener cuidado con él, pues gracias a lo vivido sabe sacar probecho de todo</descripcion>
                 <fotografia> 
                     </fotografia>
             </personaje>

@@ -1,10 +1,20 @@
+<?php
+session_start();
+if (!isset($_SESSION["id"])) {
+  header( "location: administracion.php" );
+}
+$cabecera=$_SESSION['cabecera'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        header('location: principalA.php?nombre='.urlencode($nombre)."&apellido=".urlencode($apellido));
+}
+?>
 <!DOCTYPE HTML>
 
 <html lang="es">
   
 <head>
     
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
   <title>El destino del Bierzo</title>
   <meta name="description" content="Pagina del rol en vivo: Destino del Bierzo">
   <meta name="author" content="Beatriz Arbizu Ramírez">
@@ -13,6 +23,7 @@
   <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <link rel="stylesheet" type="text/css" href="estilo.css">
+  <link rel="stylesheet" type="text/css" href="estiloTabla.css">
   <script src="./js/sitios.js"></script>
   </head>
   <body>     
@@ -40,51 +51,61 @@
       <a class="bar-item button " href="./administracion.php" onclick="media.display()">Administración</a>
     </div>       
   </nav>
-  <!-- Top menu on small screens -->
-  <header class="container top hide-large colorFondo xlarge padding">
-    <a href="javascript:void(0)" class="button colorFondo margin-right" onclick="nave.open()">☰</a>
-    <span>El destino del Bierzo</span>
-  </header>
-  
-  <!-- Overlay effect when opening sidebar on small screens -->
-  <div class="overlay hide-large" onclick="nave.close()" title="close side menu" id="myOverlay"></div>
-  
-  <main id="contenido" class="main">
-    <article  class="container" id ="pagina">
-      <h1 class=" xxxlarge  text-blue"><b>Ruta al lugar y Tiempo en la localidad</b></h1>
-      <hr class="round round-blue">
-      <section class="container">
-        <h2 class=" xxxlarge  text-blue"><b>Ruta al lugar</b></h2>
-      <p>A continuacuín se añade un lik a google donde ya te prepara la ruta hasta el destino del rol en vivo</p>
-      <div class="center">
-        <a href="javascript:void(0)" class="button colorFondo margin-right" onclick="sitio.irGoogle()">Ir a google</a>
-      </div>
-      </section>
-      
-      <!--<scrip scr="./js/sitios.js"></scrip>
-      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeM1gDxgj38G16Xx7lvrFhAT_FoauWUvE&callback=initMap"
-      type="text/javascript"></script>-->
-      
-      <section class="container" id="tiempo">
-      <h2 class=" xxxlarge  text-blue"><b>¿Que tiempo hace?</b></h2>
-      <hr class="round round-blue">
-        <p id="cambioTiempo"></p>
-        <div class="center">
-        <a href="javascript:void(0)" class="button colorFondo padding-large  hover-color" onclick="meteo.cargarDatos()">Refrecar Tiempo</a>
-        </div>
-      </section>
-      
-  
-      
-    </article></main>
+            
+    <!-- Top menu on small screens -->
+    <header class="container top hide-large colorFondo xlarge padding">
+      <a href="javascript:void(0)" class="button colorFondo margin-right" onclick="nave.open()">☰</a>
+      <span>El destino del Bierzo</span>
+    </header>
+    
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="overlay hide-large" onclick="nave.close()" title="close side menu" id="myOverlay"></div>
+    
+    <main id="contenido" class="">
+      <article  class="container center" id ="pagina">
+        <h1 class=" xxxlarge  text-blue"><b>Listado de <?php echo $_SESSION["lista"] ?></b></h1>
+        <hr class="round round-blue">      
+      </article>
+      <article  class="container" id ="pagina">
+        <section class="center" id="suscripcion">  
+        <table class="tabla">
+        <thead>
+        <tr>
+        <?php foreach($cabecera as $cabe) { ?>
+            <th ><?php echo $cabe ?> </th>
+                                  
+        <?php } ?>
+                </tr>
+            </thead>
+            <tbody>
+            <?php foreach($_SESSION["datos"] as $dato){?>
+                <tr>
+                    <?php foreach($dato as $valor){ ?>            
+                    <td><?php echo $valor; ?></td>
+                    <?php } ?>
+                </tr>
+
+                
+            <?php } ?>
+            </tbody>
+        </table>
+        </section>
+        <section class="container" id="suscripcion"> 
+            <p><p> 
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="botones">
+        <input type = 'submit' class='button' name = 'persoanjesL' value = 'Volver'/>
+          </form>
+        </section>
+      </article>
+        
+    </main>
     <footer>    
-		
+      
       <a href="https://validator.w3.org/check?uri=referer">
-          <img src="multimedia/HTML5.png" alt=" HTML5 Válido!"></a>
-  
+        <img src="./multimedia/HTML5.png" alt=" HTML5 Válido!"></a>
+    
       <a href=" http://jigsaw.w3.org/css-validator/check/referer ">
-           <img src="multimedia/CSS3.png" alt="CSS Válido!" width="64" height="63"></a>
+        <img src="./multimedia/CSS3.png" alt="CSS Válido!" width="64" height="63"></a>
     </footer> 
   
   </body>
-</html>

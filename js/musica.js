@@ -75,4 +75,25 @@ class Navegador{
 
 var nave = new  Navegador();
 
+class MachMedia{
+    constructor(){ 
+		this.display()
+    }
+    display() {
+		var tamaño = window.matchMedia("(max-width: 992px)"); 
+		
+	  tamaño.addEventListener("change",(e)=>{
+		if(e.matches) {
+			document.getElementById("mySidebar").style.display = "none";
+			document.getElementById("myOverlay").style.display = "none";
+		  } else {
+			document.getElementById("mySidebar").style.display = "block";
+			document.getElementById("myOverlay").style.display = "block";
+       }});
+      }
+       
+}
+
+
+var media = new  MachMedia();
 

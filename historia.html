@@ -5,23 +5,22 @@
   <head>
     
     <meta charset="UTF-8">
-    <title>El destino del Bierzo</title>
-    <meta name="description" content="Pagina del rol en vivo: Destino del Bierzo">
-    <meta name="author" content="Beatriz Arbizu Ramírez">
-    <meta name="keywords" content="rol,bierzo,destino, reglas, asociación">    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="estilo.css">
-    <link rel="stylesheet" type="text/css" href="estiloTablas.css">
-    <script src="pasarXml.js"></script>
-    
+  <title>El destino del Bierzo</title>
+  <meta name="description" content="Pagina del rol en vivo: Destino del Bierzo">
+  <meta name="author" content="Beatriz Arbizu Ramírez">
+  <meta name="keywords" content="rol,bierzo,destino, reglas, asociación">    
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <link rel="stylesheet" type="text/css" href="estiloTabla.css">
+  <script src="./js/pasarXml.js"></script>
   </head>
-  <body> 
+  <body>     
     <audio id ="audio" src="multimedia/fondo.mp3" preload="auto" autoplay loop></audio> 	
     
   <!-- Sidebar/menu -->
-  <nav class="sidebar colorFondo collapse top large padding" id="mySidebar">  
+  <nav class="sidebar collapse top large padding" id="mySidebar">  
     <a href="javascript:void(0)" class="button hide-large display-topleft" id="cerrar" onclick="nave.close()">Cerrar Menu</a>  
     <div class="container">
         <h3 class="padding-64"><b>El destino </b><b>del Bierzo</b></h3>
@@ -32,17 +31,25 @@
         </div><!-- / player -->
     </div>
     <div class="bar-block">
-      <a class="bar-item button hover-color" href="index.html">Inicio</a>
-      <a class="bar-item button hover-color" href="historia.html">Historia del rol en vivo</a>
-      <a class="bar-item button hover-color" href="reglas.html">Reglas del evento </a>
-      <a class="bar-item button hover-color" href="sitio.html">Localización y tiempo</a>
-      <a class="bar-item button hover-color" href="asociaciones.html">Agradecimientos</a>
-      <a class="bar-item button hover-color" href="suscrición.html">Suscrición</a>
-      <a class="bar-item button hover-color" href="horario.html">Horario</a>
-      <a class="bar-item button hover-color" href="administración.html">Administración</a>
+      <a class="bar-item button " href="index.html" onclick="media.display()">Inicio</a>
+      <a class="bar-item button " href="historia.html" onclick="media.display()">Historia del rol en vivo</a>
+      <a class="bar-item button " href="reglas.html" onclick="media.display()">Normas del evento </a>
+      <a class="bar-item button " href="sitio.html" onclick="media.display()">Localización y tiempo</a>
+      <a class="bar-item button " href="asociaciones.html" onclick="media.display()">Agradecimientos</a>
+      <a class="bar-item button " href="suscripcion.php" onclick="media.display()">Suscrición</a>
+      <a class="bar-item button " href="horario.html" onclick="media.display()">Horario</a>
+      <a class="bar-item button " href="./administracion.php" onclick="media.display()">Administración</a>
     </div>       
   </nav>
-          
+  <!-- Top menu on small screens -->
+  <header class="container top hide-large colorFondo xlarge padding">
+    <a href="javascript:void(0)" class="button colorFondo margin-right" onclick="nave.open()">☰</a>
+    <span>El destino del Bierzo</span>
+  </header>
+  
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="overlay hide-large" onclick="nave.close()" title="close side menu" id="myOverlay"></div>
+  
   <!-- Top menu on small screens -->
   <header class="container top hide-large colorFondo xlarge padding">
     <a href="javascript:void(0)" class="button colorFondo margin-right" onclick="nave.open()">☰</a>
@@ -54,11 +61,11 @@
   
   <main id="contenido" class="main container">
     <section  class="container header">
-    <h1 class=" xxxlarge  text-blue"><b>Historia y Familias</b></h1>
+    <h1 class="   text-blue"><b>Historia y Familias</b></h1>
     <hr class="round round-blue">    
   </section>
       <section  class="container" id ="pagina"> 
-        <h2 class=" xxxlarge"><b>Historia</b></h2>    
+        <h2><b>Historia</b></h2>    
         <p>Corre el siglo XIII y la gran reconquista ha empezado hacia el sur para librar todo el reino 
           de España, por eso al bierzo ha llegado una petición de reclutamiento al gran ejecito que se 
           formara bajo el mando de Pelayo.</p>
@@ -99,7 +106,7 @@
         </p>
       </section>
       <section class="container">
-        <h2 class=" xxxlarge"><b>Familias</b></h2>
+        <h2><b>Familias</b></h2>
 			<div class=" row-padding">
 			  <img src="multimedia/zevallos.png" onclick="verCasas.vercasa('multimedia/zevallos.png')" alt="Casa de Zervallos">
 			  <img src="multimedia/meneses.jpg" onclick="verCasas.vercasa('multimedia/meneses.jpg')" alt="Casa de Meneses">
