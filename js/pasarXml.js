@@ -80,12 +80,12 @@ class ArchivoXML {
                         for (var l=0; l<aux.length;l++){
                             var per=aux[l];
                             var node2 = document.createElement("h3");  
-							node2.setAttribute("class", "text_center");							// Create a <h2> node
+							node2.setAttribute("class", "center");							// Create a <h2> node
                             var textnode = document.createTextNode(per.nombre ); 
                             node2.appendChild(textnode); 
                             node.appendChild(node2); 
                             var node2 = document.createElement("h4");                 // Create a <h2> node
-							node2.setAttribute("class", "text_center");
+							node2.setAttribute("class", "center");
                             var textnode = document.createTextNode(per.posicion); 
                             node2.appendChild(textnode); 
                             node.appendChild(node2); 
@@ -109,5 +109,5 @@ class ArchivoXML {
     }
         
 }
-var verCasas = new ArchivoXML("https://uo225211.github.io/sewJunio/casas.xml");
+var verCasas = new ArchivoXML("https://uo225211.github.io/sewJunio/xml/casas.xml");
 

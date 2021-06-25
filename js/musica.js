@@ -55,10 +55,31 @@ var musica= new Musica();
 class Navegador{
     constructor(){ 
 	
-      this.audio=document.getElementById("audio");   
-      this.audio.autoplay = "true";
-      this.audioloop=true;
-      this.audio.volume = 0.5; 
+		const $dropdown = $(".dropdown");
+		const $dropdownToggle = $(".dropdown-toggle");
+		const $dropdownMenu = $(".dropdown-menu");
+		const showClass = "show";
+		 
+		$(window).on("load resize", function() {
+		  if (this.matchMedia("(min-width: 768px)").matches) {
+			$dropdown.hover(
+			  function() {
+				const $this = $(this);
+				$this.addClass(showClass);
+				$this.find($dropdownToggle).attr("aria-expanded", "true");
+				$this.find($dropdownMenu).addClass(showClass);
+			  },
+			  function() {
+				const $this = $(this);
+				$this.removeClass(showClass);
+				$this.find($dropdownToggle).attr("aria-expanded", "false");
+				$this.find($dropdownMenu).removeClass(showClass);
+			  }
+			);
+		  } else {
+			$dropdown.off("mouseenter mouseleave");
+		  }
+		});
     }
     open() {
         document.getElementById("mySidebar").style.display = "block";

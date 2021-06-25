@@ -1,330 +1,126 @@
-html {
-box-sizing : border-box;
+* {
+  box-sizing: border-box;
 }
-*, *:before, *:after {
-box-sizing : inherit;
-}
-summary {
-display : list-item;
-}
-a:active, a:hover {
-outline-width : 0;
-}
-b {
-font-weight : bolder;
-}
-img {
-  vertical-align : middle;
-  border-style : none;
-}
-
-button, input, select, textarea, optgroup {
-font : inherit;
-margin : 0;
-}
-
-button, input {
-overflow : visible;
-}
-button, select {
-text-transform : none;
-}
-
-html, body {
-color : inherit;
-font : 400 16px "Palatino", "URW Palladio L", serif;
-line-height : 2.5;
-background-color : #f0d7a8;
-padding : 10px;
-margin-left: 0;
-}
-html {
-overflow-x : hidden;
-}
-h1 {
-  font-size : 48px  ;
-}
-h2 {
-font-size : 30px;
-}
-h3 {
-font-size : 24px;
-}
-h4 {
-font-size : 20px;
-}
-
-h1, h2, h3, h4, h5, h6 {
-font-family : "Segoe UI", Arial, sans-serif;
-font-weight : 400;
-margin : 10px 0;
-text-align : center;
-}
-hr {
-  box-sizing : content-box;
-  height : 0;
-  overflow : visible;
-  margin : 20px 0;
-}
-.button {
-border : none;
-display : inline-block;
-padding : 8px 16px;
-vertical-align : middle;
-overflow : hidden;
-text-decoration : none;
-background-color : #8f2626;
-color : #fff  ;
-text-align : center;
-cursor : pointer;
-white-space : nowrap;
-}
-
-.sidebar {
-height : 100%;
-width : 200px;
-color : #fff  ;
-background-color : #b64646;
-position : fixed;
-z-index : 1;
-overflow : auto;
-}
-
-.main, #main {
-transition : margin-left 0.4s;
-}
-.modal {
-z-index : 3;
-display : none;
-position : fixed;
-left : 0;
-top : 0;
-width : 100%;
-height : 100%;
-overflow : auto;
-background-color : rgb(0, 0, 0);
-color : inherit;
-}
-.modal-content {
-margin : auto;
-background-color : #fff;
-color : inherit;
-position : relative;
-padding : 0;
-outline : 0;
-width : auto;
-}
-.bar {
-width : 100%;
-overflow : hidden;
-}
-.bar .bar-item {
-padding : 8px 16px;
-float : left;
-width : auto;
-border : none;
-display : block;
-outline : 0;
-}
-.bar .dropdown-hover, .bar .dropdown-click {
-position : static;
-float : left;
-}
-.bar .button {
-white-space : normal;
-}
-.bar-block .bar-item {
-width : 100%;
-display : block;
-padding : 8px 16px;
-text-align : left;
-border : none;
-white-space : normal;
-float : none;
-outline : 0;
-}
-.bar-block.center .bar-item {
-text-align : center;
-}
-
-.container:after, .container:before, .panel:after, .panel:before, .row:after, .row:before, .row-padding:after, .row-padding:before, .cell-row:before, .cell-row:after, .clear:after, .clear:before, .bar:before, .bar:after {
-content : "";
-display : table;
-clear : both;
-}
-
-.content, .auto {
-margin-left : auto;
-margin-right : auto;
-}
-.content {
-max-width : 980px;
-}
-
-.show-block, .show {
-display : block;
-}
-.show-inline-block {
-display : inline-block;
-}
-@media (max-width: 1205px) {
-.auto {
-max-width : 95%;
-}
-}
-@media (max-width: 600px) {
-.modal {
-padding-top : 30px;
-}
-.mobile {
-display : block;
-width : 100%  ;
-}
-.bar-item.mobile {
-text-align : center;
-}
-.container{
-  margin-left: auto;
-}
-
-}
-
-
-@media (min-width: 993px) {
-.hide-large {
-display : none  ;
-}
-#contenido{
-  margin-left: 290px;
-}
-
-}
-
-.top, .bottom {
-position : fixed;
-width : 100%;
-z-index : 1;
-}
-.top {
-top : 0;
-}
-.bottom {
-bottom : 0;
-}
-.overlay {
-position : fixed;
-display : none;
-width : 100%;
-height : 100%;
-top : 0;
-left : 0;
-right : 0;
-bottom : 0;
-z-index : 2;
-}
-.round-small {
-border-radius : 2px;
-}
-.round {
-border-radius : 4px;
-}
-
-.row-padding, .row-padding > .half{
-padding : 0 8px;
-}
-.container {
-padding : 0.01em 16px;
-}
-.center {
-text-align : center  ;
-}
-
-.margin-right {
-margin-right : 16px  ;
-}
-
-.padding {
-padding : 8px 16px  ;
-}
-
-.padding-64 {
-padding-top : 64px  ;
-padding-bottom : 64px  ;
-}
-
-.button:hover {
+body {
+  margin: 0;
+  font: 400 15px "Palatino", "URW Palladio L", serif; 
+  line-height: 2.5;
+  background-color:  #f0d7a8;
+  padding: 10px;
   
-background-color : #f5cece  ;
-color : #000  ;
 }
-.colorFondo {
-background-color : #ca3b3b;
-color : #fff  ;
-}
-.half {
-align-items : center;
-justify-content : center;
-float : left;
-}
-.half img {
-margin-bottom : -6px;
-margin-top : 16px;
-opacity : 0.8;
-cursor : pointer;
-text-align : center;
-}
-.half img:hover {
-opacity : 1;
-}
-.hover-color:hover {
-background-color : #f5cece  ;
-color : #000  ;
-}
-#cerrar {
-width : 100%;
-font-size : 22px;
-}
-#mySidebar {
-z-index : 3;
-width : 230px;
-font-weight : bold;
-}
-#myOverlay {
-cursor : pointer;
+  header{
+    background-color:#f52929; 
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 26px;
+      padding: 20px 40px;
+      text-align: center;    
+  }
+ 
+
+  .center{
+    text-align: center;   
+  }
+.leftcolumn {   
+    float: left;
+    width: 25%;
 }
 
-footer {
-padding : 10px;
-text-align : center;
-margin-top : 20px;
-}
-.text-blue {
-background-color : inherit;
-color : #2320e4;
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 75%;  
+  padding-left: 20px;
 }
 
-.imgen_centro {
-display : block;
-margin : auto;
-}
-#fondo {
-background-image : url("multimedia/pergamino.jpg");
-}
-#button_S {
-font-size : 50px;
-text-align : center;
-}
-.botonesCasas {
-display : flex;
-justify-content : center;
-}
-#pagina {
-margin-top : 75px;
-}
-.round-blue {
-border : #2320e4 solid 5px;
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.header{
-  margin-top:80px;
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
 }
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  nav a {
+    float: none;
+    width: 100%;
+  }
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #ffdfdf;
+    height: 100%;
+  }
+  
+  nav li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+  }  
+
+  
+  nav li a.active {
+    background-color:#e59595; 
+    color: black;
+  }
+  
+  nav li a:hover:not(.active) {
+    background-color: #e59595;
+    color: black;
+  }
+  
+
+  footer {
+    background-color: #f0d7a8;
+    padding: 10px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  
+ article{
+  font-size: 20px;
+  margin-top: 20px;
+ }
+  article h1 {
+    color:#2320e4; 
+    font-size: 50px;
+    text-align: center;     
+}
+article h2 {
+  font-size: 24px;
+  text-align: center; 
+}
+
+.pelicula{
+  padding: 20px;
+  margin-top: 20px;
+}
+video {
+  width: auto;
+  height: auto;
+}
+
+  .matriximg{
+    
+  height:100%; 
+  width:100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  .imgen_centro {
+    display : block;
+    margin : auto;
+    }
