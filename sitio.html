@@ -36,8 +36,12 @@
                   <li><a href="./administracion.php" >Administración</a></li>
                   <li></li>
                   <li><div class="center">
-                    <img id="pause/play" src="multimedia/play.png" onclick="musica.play()" alt="pause/play">
-                    <img id="sound/notSound" src="multimedia/sound.png" onclick="musica.sound()" alt="pause/play">
+                    <button onclick="musica.play()">
+                    <img id="pause/play" src="multimedia/play.png"  alt="pause/play">
+                  </button>
+                  <button onclick="musica.sound()">
+                    <img id="sound/notSound" src="multimedia/sound.png"  alt="muted/sound">
+                  </button>
                     <script src="./js/musica.js"></script>
                   </div></li>
               </ul>
