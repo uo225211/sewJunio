@@ -73,7 +73,7 @@ padding : 8px 16px;
 vertical-align : middle;
 overflow : hidden;
 text-decoration : none;
-background-color : #df4545;
+background-color : #8f2626;
 color : #fff  ;
 text-align : center;
 cursor : pointer;
@@ -84,7 +84,7 @@ white-space : nowrap;
 height : 100%;
 width : 200px;
 color : #fff  ;
-background-color : #df4545;
+background-color : #b64646;
 position : fixed;
 z-index : 1;
 overflow : auto;
@@ -258,7 +258,7 @@ background-color : #f5cece  ;
 color : #000  ;
 }
 .colorFondo {
-background-color : #df4545;
+background-color : #ca3b3b;
 color : #fff  ;
 }
 .half {
