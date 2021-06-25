@@ -66,8 +66,8 @@ nav ul {
   
   nav li a {
     display: block;
-    background-color: #000;
-    color: inherit;
+    color: #000;
+    background-color: inherit;
     padding: 8px 16px;
     text-decoration: none;
   }  
@@ -129,3 +129,7 @@ video {
     display : block;
     margin : auto;
     }
+
+    #fondo {
+      background-image : url("multimedia/pergamino.jpg");
+      }

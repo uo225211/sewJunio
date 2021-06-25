@@ -117,46 +117,39 @@ $_suscripcion=array();
   <body>     
     <audio id ="audio" src="multimedia/fondo.mp3" preload="auto" autoplay loop></audio> 	
     
-  <!-- Sidebar/menu -->
-  <nav class="sidebar collapse top large padding" id="mySidebar">  
-    <a href="javascript:void(0)" class="button hide-large display-topleft" id="cerrar" onclick="nave.close()">Cerrar Menu</a>  
-    <div class="container">
-        <h3 class="padding-64"><b>El destino </b><b>del Bierzo</b></h3>
-        <div class="row-padding half">
-          <img id="pause/play" src="multimedia/play.png" onclick="musica.play()" alt="pause/play">
-          <img id="sound/notSound" src="multimedia/sound.png" onclick="musica.sound()" alt="pause/play">
-          <script src="./js/musica.js"></script>
-        </div><!-- / player -->
-    </div>
-    <div class="bar-block">
-      <a class="bar-item button " href="index.html" onclick="media.display()">Inicio</a>
-      <a class="bar-item button " href="historia.html" onclick="media.display()">Historia del rol en vivo</a>
-      <a class="bar-item button " href="reglas.html" onclick="media.display()">Normas del evento </a>
-      <a class="bar-item button " href="sitio.html" onclick="media.display()">Localización y tiempo</a>
-      <a class="bar-item button " href="asociaciones.html" onclick="media.display()">Agradecimientos</a>
-      <a class="bar-item button " href=".suscripcion.php" onclick="media.display()">Suscrición</a>
-      <a class="bar-item button " href="horario.html" onclick="media.display()">Horario</a>
-      <a class="bar-item button " href="./administracion.php" onclick="media.display()">Administración</a>
-    </div>       
-  </nav>
-  <!-- Top menu on small screens -->
-  <header class="container top hide-large colorFondo xlarge padding">
-    <a href="javascript:void(0)" class="button colorFondo margin-right" onclick="nave.open()">☰</a>
-    <span>El destino del Bierzo</span>
-  </header>
-  
-  <!-- Overlay effect when opening sidebar on small screens -->
-  <div class="overlay hide-large" onclick="nave.close()" title="close side menu" id="myOverlay"></div>
-  
+    <header class="Titulo">
+      <p>El destino del Bierzo</p>
+  </header> 
+  <main class="row">
+      <aside class="leftcolumn" id="leftcolumn">
+          <nav>
+              
+              <ul>
+                  <li><a href="index.html" >Inicio</a></li>
+                  <li><a  href="historia.html" >Historia</a></li>
+                  <li><a href="reglas.html" >Normas del evento </a></li>
+                  <li> <a  href="sitio.html" >Localización y tiempo</a></li>
+                  <li><a href="asociaciones.html" >Agradecimientos</a></li>
+                  <li><a href="suscripcion.php" >Suscrición</a></li>
+                  <li>  <a  href="horario.html" >Horario</a></li>
+                  <li><a class="active" href="./administracion.php" >Administración</a></li>
+                  <li></li>
+                  <li><div class="center">
+                    <img id="pause/play" src="multimedia/play.png" onclick="musica.play()" alt="pause/play">
+                    <img id="sound/notSound" src="multimedia/sound.png" onclick="musica.sound()" alt="pause/play">
+                    <script src="./js/musica.js"></script>
+                  </div></li>
+              </ul>
+          </nav>
+      </aside>
 
-    <main id="contenido" class="main">
-      <article  class="container" id ="pagina">
+    <article class="rightcolumn" id ="rightcolumn">  
         <h1 class=" xxxlarge  text-blue"><b>Bienvenid@ <?php echo $_SESSION['nombre']  ?>." "<?php echo  $apellido  ?></b></h1>
         <hr class="round round-blue">
         
-      </article>
-      <article  class="container" id ="pagina">
-        <section class="container" id="suscripcion">
+  
+      <section  class="container" id ="pagina">
+        <div class="container" id="suscripcion">
         
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" id="botones">
          
@@ -177,7 +170,8 @@ $_suscripcion=array();
         
           
       </form>
-        </section>
+    </div>
+      </section>
       </article>
         
     </main>
